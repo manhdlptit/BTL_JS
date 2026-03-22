@@ -1,0 +1,88 @@
+html {
+  font-size: 62.5%;
+  margin: 0 4rem;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: pink;
+}
+
+h1 {
+  font-size: 5rem;
+  text-align: center;
+  margin: 1rem;
+}
+
+h2 {
+  font-size: 4rem;
+  margin: 1rem;
+  text-align: center;
+}
+
+.surround_film {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.inf_film {
+  height: 30rem;
+  width: 45%;
+  background-color: rgb(12, 2, 2);
+  box-sizing: border-box;
+  display: flex;
+  line-height: 3rem;
+  border: 0.1rem inset black;
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 1rem;
+}
+
+.inf_film h3 {
+  font-size: 2.5rem;
+  color: white;
+}
+
+.inf_film h4 {
+  font-size: 2rem;
+}
+
+.inf_film img {
+  width: 20rem;
+  height: 100%;
+  display: block;
+}
+
+.inf_film .right {
+  box-sizing: border-box;
+  padding: 1rem 2rem;
+}
+
+.blur {
+  display: flex;
+}
+.blur p {
+  color: rgb(206, 206, 207);
+}
+
+.blur p:last-child {
+  margin-left: 4rem;
+}
+
+.white {
+  color: white;
+}
+
+.red {
+  color: red;
+}
+
+button {
+  margin: 0.1rem 0rem;
+  height: 3rem;
+  width: 5rem;
+}
+
+h4 {
+  color: white;
+}
