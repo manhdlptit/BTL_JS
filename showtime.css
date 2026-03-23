@@ -23,11 +23,12 @@ h2 {
 .surround_film {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .inf_film {
   height: 30rem;
-  width: 45%;
+  width: 48%;
   background-color: rgb(12, 2, 2);
   box-sizing: border-box;
   display: flex;
@@ -50,7 +51,6 @@ h2 {
 .inf_film img {
   width: 20rem;
   height: 100%;
-  display: block;
 }
 
 .inf_film .right {
