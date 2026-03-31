@@ -1,0 +1,195 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  background-color: black;
+  font-size: 1.6rem;
+  font-family: "Montserrat", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+.logo {
+  height: 50px;
+  padding: 10px 0px 10px 10px;
+}
+.header .body {
+  display: flex;
+}
+.nav ul {
+  display: flex;
+}
+.nav a {
+  color: aliceblue;
+}
+.logo-text {
+  color: aliceblue;
+  padding: 10px 10px 10px;
+  font-size: 10px;
+}
+.header {
+  background-color: #1a1d24;
+  padding: 10px 40px;
+}
+.nav {
+  margin: auto;
+  padding: 10px 40px;
+}
+.nav-menu {
+  padding: 10px 20px;
+  gap: 40px;
+}
+.nav ul li a:hover {
+  color: red;
+}
+.action {
+  display: flex;
+  padding: 10px 20px;
+  gap: 30px;
+}
+.btn {
+  color: aliceblue;
+  border-radius: 30px;
+  background: #1a1d24;
+  display: inline-block;
+  padding: 10px;
+  width: 150px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+.btn.btn1 {
+  background: linear-gradient(90deg, #ff416c, #ff4b2b);
+}
+.btn.btn2 {
+  border: 1px solid;
+}
+.btn:hover {
+  transform: scale(1.05);
+}
+.nav-menu a.active {
+  color: #ff3b3b;
+}
+.desc-film,
+.kind-film,
+.title {
+  color: aliceblue;
+}
+.hero-banner {
+  position: relative;
+  /* height: 90vh; */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  padding-top: 70px;
+  padding-bottom: 50px;
+}
+.under_trailer {
+  position: absolute; /* Đưa video lùi lại phía sau */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ép video phủ kín khung hình mà không bị méo */
+  z-index: 0; /* Cho nằm ở tầng dưới cùng */
+  filter: blur(5px); /* Tăng giảm số px để chỉnh độ mờ (blur) */
+}
+.banner-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 0 40px;
+}
+.movie-content {
+  color: aliceblue;
+  max-width: 800px;
+}
+.title_film {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin: 10px 0;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+.director_film,
+.actor_film,
+.desc_film,
+.condition_film {
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+.btn-ticket {
+  display: inline-block;
+  background-color: #ff4b2b;
+}
+i {
+  display: inline-block;
+  color: #ff4b2b;
+}
+.btn-ticket {
+  display: inline-block;
+  color: aliceblue;
+  margin-right: 4px;
+}
+.desc-film {
+  display: inline-block;
+  background-color: #ff4b2b;
+  border-radius: 30px;
+  padding: 10px;
+}
+.header.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+.condition {
+  color: #ff4b2b;
+}
+.btn.btn-ticket {
+  display: inline-block;
+  color: aliceblue;
+}
+
+.movie-list-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+}
+.movie-card {
+  background-color: #1a1d24;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+.movie-card:hover {
+  transform: translateY(-10px);
+}
+.movie-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2/3;
+  overflow: hidden;
+}
+.poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.movie-card:hover .poster {
+  transform: scale(1.1);
+}

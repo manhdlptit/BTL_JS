@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/reset.css" />
+    <!-- embed font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../static/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <title>Rạp Chiếu Phim Quốc Gia</title>
+  </head>
+  <body style="height: 5000px">
+    <header>
+      <header class="header fixed">
+        <div class="main-content">
+          <div class="body">
+            <!-- logo -->
+            <img src="../static/bg/logoweb.jpg.webp" alt="" class="logo" />
+            <div class="logo-text">
+              NATIONNAL<br />
+              CINEMA<br />
+              CENTER
+            </div>
+            <!-- nav -->
+            <nav class="nav">
+              <ul class="nav-menu">
+                <li>
+                  <a href="./home.html" class="active">Trang Chủ</a>
+                </li>
+                <li><a href="../templates/calendar.html">Lịch Chiếu</a></li>
+                <li><a href="../templates/infor.html">Giới Thiệu</a></li>
+              </ul>
+            </nav>
+            <!-- btn actions -->
+            <div class="action">
+              <a href="" class="btn btn2">Đăng Nhập</a>
+              <a href="" class="btn btn1">Đăng Kí</a>
+            </div>
+          </div>
+        </div>
+      </header>
+    </header>
+    <!-- hero banner -->
+    <section class="hero-banner">
+        <video class="under_trailer"autoplay loop muted playsinline>
+            <source src="../static/bg/HẸN EM NGÀY NHẬT THỰC - MAIN TRAILER - DỰ KIẾN KHỞI CHIẾU 03.04.2026.mp4"type="video/mp4">
+        </video>
+        <div class="banner-container">
+        <div class="movie-content">
+          <span class="desc-film">Đang Chiếu Rạp</span>
+          <h1 class="title_film">HẸN EM NGÀY NHẬT THỰC-T16</h1>
+          <div class="kind-film">
+            <span
+              ><i class="fa-solid fa-film"></i>Tâm Lý,Tình Cảm 2D,Việt Nam</span
+            >
+            <span><i class="fa-solid fa-clock"></i>118 Phút</span>
+          </div>
+
+            <div class="director_film">Đạo Diễn:Lê Thiện Viễn</div>
+            <div class="actor_film">
+              <p>Diễn Viên:</p>
+              <p>
+                Đoàn Thiên Ân,Khương Lê,NSND Lê Khanh,Huỳnh Phương,Nguyên
+                Thảo,NSND Kim Xuân,Thanh Sơn,Hứa Vĩ Văn,Lâm Vỹ Dạ,Hứa Minh Đạt
+              </p>
+            </div>
+            <p class="desc_film">
+                Năm 1995,khi đang đứng trước một định quan trọng của cuộc đời,Ân
+                bất ngờ bị kéo lại quá khứ bởi những bức thư tình chưa từng trao
+                tay.Hành trình tìm gặp Thiên-mối tình đầu từng khắc sâu trong
+                tim-đưa cô về lại xóm Trà Mây...
+            </p>
+            <div class="condition_film">
+              <p class="condition">
+                Kiểm Duyệt:T18-Phim được phổ biến đến người xem từ đủ 18 tuổi
+                trở lên(18+)
+              </p>
+            </div>
+            <div class="movie-actions">
+                <a href="#" class="btn btn-ticket"><i class="fa-solid fa-ticket btn-ticket"></i>Mua Vé Ngay</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="movie-list-section">
+        <div class="movie-list-container">
+            <h2 class="h2-movie-list">PHIM ĐANG CHIẾU</h2>
+            <div class="movie-grid">
+                <div class="movie-card">
+                    <img src="../static/bg/0019617_0.webp" alt="Quỷ Nhập Tràng 2" class="poster">
+                    <div class="pic-film-list">
+                        <a href="#" class="btn btn-ticket"><ic class="fa-solid fa-ticket"></ic></a>
+                    </div>
+                    <div class="movie-infor">
+                        <h3 class="h3-movie-list">Quỷ Nhập Tràng</h3>
+                        <p class="kind-film-list">Kinh Dị,Gia Đình</p>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <img src="../static/bg/img.png" alt="Tài" class="poster">
+                    <div class="pic-film-list">
+                        <a href="#" class="btn btn-ticket"><i class="fa-solid fa-ticket"></i></a>
+                    </div>
+                    <div class="movie-infor">
+                        <h3 class="h3-movie-list">Tài</h3>
+                        <p class="kind-film-list">Gia Đình,Tình Cảm</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  </body>
+</html>
