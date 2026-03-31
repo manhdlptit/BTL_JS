@@ -1,6 +1,6 @@
 from dotenv import load_dotenv
 load_dotenv()
-from flask import Blueprint, request, redirect, url_for, render_template
+from flask import Blueprint, request, redirect, url_for, render_template, jsonify
 from app.blueprints.model import User, db
 
 signup = Blueprint("signup", __name__)
@@ -17,23 +17,23 @@ def sign_up():
         find_username = User.query.filter(User.username == username).first()
 
         if not email or not username or not check_password or not password:
-            return render_template("loi.html")
+            return jsonify({"error": "not null any value"}),400  
         if find_email is not None:
-            return render_template("loi.html")
+            return jsonify({"error": "email existed"}),400      
         if find_username is not None:
-            return render_template("loi.html")
+            return jsonify({"error": "username existed"}),400      
         if len(username) > 30:
-            return render_template("loi.html")
+            return jsonify({"error": "length username must shorter than 30 character"}),400         
         if len(password) > 16 or len(password)<8:
-            return render_template("loi.html")
+            return jsonify({"error": "8 <= length password <= 16"}),400      
         if password != check_password:
-            return render_template("loi.html")
+            return jsonify({"error": "password different check password"}),400     
     
         new_user = User(email=email,username=username, password=password)
         db.session.add(new_user)
         db.session.commit()
 
-        return render_template("html.html")
+        return render_template("showtime.html")
     return render_template("signup.html")
 
 

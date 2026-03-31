@@ -1,6 +1,6 @@
 from dotenv import load_dotenv
 load_dotenv()
-from flask import Blueprint, request, redirect, url_for, render_template
+from flask import Blueprint, request, redirect, url_for, render_template, jsonify
 from app.blueprints.model import User, db
 
 login = Blueprint("login", __name__)
@@ -14,13 +14,13 @@ def login_user():
         find_username = User.query.filter(User.username == username).first()
 
         if not username or not password:
-            return render_template("loi.html")
+            return jsonify({"error": "not null any value"}),400    
         if find_username is None:
-            return render_template("loi.html")
+            return jsonify({"error": "not find username"}),404   
         if password != find_username.password:
-            return render_template("loi.html")
+            return jsonify({"error": "password different check password"}),400    
 
-        return render_template("html.html")
+        return render_template("showtime.html")
     return render_template("login.html")
 
 
