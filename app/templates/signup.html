@@ -15,44 +15,43 @@
     <title>Đăng Kí</title>
   </head>
   <body>
+    <div class="pic-bg-sign-up">
+      <img src="../static/bg/dki.bg.webp" alt="Ảnh BG Sign Up" />
+    </div>
     <form action="#" , method="post">
       <div class="group">
-        <h2>Đăng Kí</h2>
-        <div><label for="">Nhập vào email</label></div>
+        <h2 class="sign-up-button">Đăng Kí</h2>
+        <div><label for="">Email</label></div>
         <div>
-          <input
-            type="email"
-            name="email"
-            placeholder="Nhập vào email của bạn"
-          />
+          <input type="email" name="email" placeholder="Email" />
         </div>
       </div>
       <div class="group">
-        <div><label for="">Nhập vào username</label></div>
+        <div><label for="">Name</label></div>
         <div>
-          <input
-            type="text"
-            name="username"
-            placeholder="Nhập vào tên của bạn"
-          />
+          <input type="text" name="username" placeholder="Name" />
         </div>
       </div>
       <div class="group">
-        <div><label for="">Nhập vào mật khẩu</label></div>
+        <div><label for="">Password</label></div>
         <div>
-          <input type="text" name="password" placeholder="Nhập vào mật khẩu" />
+          <input type="text" name="password" placeholder="Passwword" />
         </div>
       </div>
       <div class="group">
-        <div><label for="">Kiểm tra mật khẩu</label></div>
+        <div><label for="">Check Password</label></div>
         <div>
           <input
             type="text"
             name="check_password"
-            placeholder="Nhập lại mật khẩu"
+            placeholder="Check Password"
           />
         </div>
         <div class="btn"><button type="submit">Đăng ký</button></div>
+      </div>
+      <div class="link-to-log-in">
+        <p class="desc-link-to-log-in">Đã Có Tài Khoản?</p>
+        <a href="./login.html">Đăng Nhập Ngay</a>
       </div>
     </form>
   </body>

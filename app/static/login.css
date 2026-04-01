@@ -54,9 +54,9 @@ form {
   padding: 5px 10px;
   background: linear-gradient(90deg, #ff416c, #ff4b2b);
   color: aliceblue;
+  justify-content: center;
 }
 input::placeholder {
-  color:;
   font-style: italic;
   opacity: 1;
   transition: all 0.3s ease;
@@ -72,6 +72,7 @@ input {
   width: 400px;
   height: 35px;
   background-color: #1a1d24;
+  color: aliceblue;
 }
 .link-to-sign-up {
   margin-top: 10px;
@@ -89,4 +90,8 @@ input {
 }
 .link-to-sign-up a {
   color: #ff4b2b;
+}
+.btn {
+  display: flex;
+  justify-content: center;
 }

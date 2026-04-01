@@ -1,6 +1,6 @@
 /* Tạo css cho signup.html ở đây */
 * {
-  box-sizing:;
+  box-sizing: border-box;
 }
 html {
   font-size: 62.5%;
@@ -12,6 +12,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  margin: 10px 10px;
 }
 input,
 button {
@@ -20,8 +21,79 @@ button {
 form {
   background-color: #1a1d24;
   border-radius: 15px;
-  padding: 120px 80px;
+  padding: 60px 40px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   width: 100%;
   max-width: 500px;
+  max-height: 1200vh;
+}
+input::placeholder {
+  border-radius: 15px;
+}
+.group label {
+  display: inline-block;
+  color: aliceblue !important;
+  gap: 10px;
+  font-size: 1.5rem;
+}
+.btn button {
+  display: flex;
+  border-radius: 12.5px;
+  margin-top: 17px;
+  color: aliceblue;
+  padding: 5px 17px;
+  background: linear-gradient(90deg, #ff416c, #ff4b2b);
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+.sign-up-button {
+  color: aliceblue;
+  font-weight: bold;
+  font-size: 3rem;
+  margin-bottom: 15px;
+  margin-top: 3px;
+}
+input {
+  border-radius: 12.5px;
+  background-color: #1a1d24;
+  width: 43rem;
+  height: 3.5rem;
+  text-align: left;
+  color: aliceblue;
+}
+label {
+  margin: 15px 15px;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+}
+.desc-link-to-log-in {
+  color: aliceblue;
+}
+.link-to-log-in {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  font-size: 1.25rem;
+}
+.link-to-log-in a {
+  color: #ff4b2b !important;
+  margin-left: 10px;
+  text-decoration: none;
+}
+.pic-bg-sign-up img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(2px);
+}
+.pic-bg-sign-up {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
 }
