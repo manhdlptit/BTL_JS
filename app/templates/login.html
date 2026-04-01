@@ -3,30 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../static/reset.css" />
     <link rel="stylesheet" href="../static/login.css" />
-    <title>Document</title>
+
+    <title>Đăng Nhập</title>
   </head>
   <body>
+    <div class="pic-background">
+      <img src="../static/bg/songhulamnguy.jpg" alt="" />
+    </div>
     <form action="#" , method="post">
       <div class="group">
-        <div><label for="">Nhập vào username</label></div>
+        <div class="h2-login"><h2>Đăng Nhập</h2></div>
+        <div class="desc-name"><label for="">Name</label></div>
         <div>
-          <input
-            type="text"
-            name="username"
-            placeholder="Nhập vào tên của bạn"
-          />
+          <input type="text" name="username" placeholder="Name" />
         </div>
       </div>
       <div class="group">
-        <div><label for="">Nhập vào mật khẩu</label></div>
+        <div class="desc-password"><label for="">Mật Khẩu</label></div>
         <div>
-          <input type="text" name="password" placeholder="Nhập vào mật khẩu" />
+          <input type="text" name="password" placeholder="Mật Khẩu" />
         </div>
       </div>
       <div class="group">
         <div class="btn"><button type="submit">Đăng nhập</button></div>
+      </div>
+      <div class="link-to-sign-up">
+        <p class="desc-to-sihn-up">Bạn chưa có Tài Khoản ?</p>
+        <a href="./signup.html" class="sign-up-link">Đăng Kí Ngay</a>
       </div>
     </form>
   </body>
