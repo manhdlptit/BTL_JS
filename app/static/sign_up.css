@@ -1,1 +1,27 @@
 /* Tạo css cho signup.html ở đây */
+* {
+  box-sizing:;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  background-color: white;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+input,
+button {
+  font-family: "Montserrat", sans-serif;
+}
+form {
+  background-color: #1a1d24;
+  border-radius: 15px;
+  padding: 120px 80px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 500px;
+}

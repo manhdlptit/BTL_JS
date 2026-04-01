@@ -98,7 +98,7 @@ ul {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ép video phủ kín khung hình mà không bị méo */
+  object-fit: cover; /* Ép video phủ kín khung mà không méo */
   z-index: 0; /* Cho nằm ở tầng dưới cùng */
   filter: blur(5px); /* Tăng giảm số px để chỉnh độ mờ (blur) */
 }
@@ -169,12 +169,21 @@ i {
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 30px;
 }
-.movie-card:hover {
-  transform: translateY(-10px);
+.movie-card img {
 }
+.movie-card img:hover {
+  transform: translateY(-10px);
+  overflow: hidden;
+}
+/* .movie-card img {
+  max-width: 100px;
+  max-height: 200px;
+} */
 .movie-card {
   background-color: #1a1d24;
   border-radius: 10px;
+  /* max-width: 300px;
+  max-height: 300px; */
   overflow: hidden;
   transition: transform 0.3s ease;
   color: aliceblue; /* Ép chữ bên trong thành màu trắng */
@@ -195,13 +204,14 @@ i {
   margin: 15px 0px;
   font-size: 2.5rem;
   border-left: 5px solid #ff4b2b;
+  margin: 30px;
 }
 .btn-ticket i {
   color: aliceblue !important;
   margin-right: 10px;
 }
 .movie-infor {
-  margin: 40px 20px;
+  margin: 30px 20px 15px;
 }
 .pic-film-list {
   margin: 20px 20px;
