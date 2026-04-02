@@ -7,10 +7,10 @@ menu = Blueprint("menu", __name__)
 
 @menu.route("/homepage")
 def homepage():
-    return render_template("html.html")
+    return render_template("home.html")
 @menu.route("/showtime")
 def showtime():
-    return render_template("html.html")
+    return render_template("calendar.html")
 @menu.route("/intro")
 def intro():
-    return render_template("intro.html")
+    return render_template("infor.html")

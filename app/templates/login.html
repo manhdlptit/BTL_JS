@@ -21,15 +21,15 @@
     <form action="#" , method="post">
       <div class="group">
         <div class="h2-login"><h2>Đăng Nhập</h2></div>
-        <div class="desc-name"><label for="">Name</label></div>
+        <div class="desc-name"><label for="">Tên đăng nhập</label></div>
         <div>
-          <input type="text" name="username" placeholder="Name" />
+          <input type="text" name="username" placeholder="Tên đăng nhập" />
         </div>
       </div>
       <div class="group">
         <div class="desc-password"><label for="">Mật Khẩu</label></div>
         <div>
-          <input type="text" name="password" placeholder="Mật Khẩu" />
+          <input type="text" name="password" placeholder="Mật khẩu" />
         </div>
       </div>
       <div class="group">
@@ -37,7 +37,9 @@
       </div>
       <div class="link-to-sign-up">
         <p class="desc-to-sign-up">Bạn chưa có Tài Khoản ?</p>
-        <a href="./signup.html" class="sign-up-link">Đăng Kí Ngay</a>
+        <a href="{{ url_for('signup.sign_up') }}" class="sign-up-link"
+          >Đăng Kí Ngay</a
+        >
       </div>
     </form>
   </body>
