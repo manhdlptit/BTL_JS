@@ -2,6 +2,7 @@ from dotenv import load_dotenv
 load_dotenv()
 from flask import Blueprint, request, redirect, url_for, render_template, jsonify
 from app.blueprints.model import User, db
+from app.blueprints.login import login
 
 signup = Blueprint("signup", __name__)
 
@@ -33,7 +34,7 @@ def sign_up():
         db.session.add(new_user)
         db.session.commit()
 
-        return render_template("showtime.html")
+        return redirect(url_for("login.login_user"))
     return render_template("signup.html")
 
 

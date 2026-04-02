@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="../static/reset.css">
     <link rel="stylesheet" href="../static/gioithieu1.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Rạp Chiếu Phim Quốc Gia</title>
 </head>
 <body>
@@ -23,18 +23,20 @@
             CINEMA<br />
             CENTER
           </div>
-
+          
           <nav class="nav">
             <ul class="nav-menu">
-              <li><a href="../templates/home.html" >Trang Chủ</a></li>
-              <li><a href="../templates/calendar.html" >Lịch Chiếu</a></li>
-              <li><a href="#" class="active">Giới Thiệu</a></li>
+              <li>
+                  <a href="{{ url_for('menu.homepage') }}">Trang Chủ</a>
+                </li>
+                <li><a href="{{ url_for('menu.showtime') }}">Lịch Chiếu</a></li>
+                <li><a href="{{ url_for('menu.intro') }}" class="active">Giới Thiệu</a></li>
             </ul>
           </nav>
 
           <div class="action">
-            <a href="./login.html" class="btn btn2">Đăng Nhập</a>
-            <a href="./signup.html" class="btn btn1">Đăng Kí</a>
+            <a href="{{ url_for('login.login_user') }}" class="btn btn2">Đăng Nhập</a>
+            <a href="{{ url_for('signup.sign_up') }}" class="btn btn1">Đăng Kí</a>
           </div>
         </div>
       </div>

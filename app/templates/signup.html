@@ -27,31 +27,31 @@
         </div>
       </div>
       <div class="group">
-        <div><label for="">Name</label></div>
+        <div><label for="">Tên đăng nhập</label></div>
         <div>
-          <input type="text" name="username" placeholder="Name" />
+          <input type="text" name="username" placeholder="Tên đăng nhập" />
         </div>
       </div>
       <div class="group">
-        <div><label for="">Password</label></div>
+        <div><label for="">Mật khẩu</label></div>
         <div>
-          <input type="text" name="password" placeholder="Passwword" />
+          <input type="text" name="password" placeholder="Mật khẩu" />
         </div>
       </div>
       <div class="group">
-        <div><label for="">Check Password</label></div>
+        <div><label for="">Xác nhận mật khẩu</label></div>
         <div>
           <input
             type="text"
             name="check_password"
-            placeholder="Check Password"
+            placeholder="Xác nhận mật khẩu"
           />
         </div>
         <div class="btn"><button type="submit">Đăng ký</button></div>
       </div>
       <div class="link-to-log-in">
         <p class="desc-link-to-log-in">Đã Có Tài Khoản?</p>
-        <a href="./login.html">Đăng Nhập Ngay</a>
+        <a href="{{ url_for('login.login_user') }}">Đăng Nhập Ngay</a>
       </div>
     </form>
   </body>

@@ -6,17 +6,23 @@
     <title>Rạp Chiếu Phim Quốc Gia</title>
     <link rel="stylesheet" href="../static/reset.css" />
     <link rel="stylesheet" href="../static/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body>  </head>
 
   <body style="height: 5000px">
     <header class="header fixed">
       <div class="main-content">
         <div class="body">
-          <img src="../static/bg/logoweb.jpg.webp" alt="Logo rạp" class="logo" />
+          <img
+            src="../static/bg/logoweb.jpg.webp"
+            alt="Logo rạp"
+            class="logo"
+          />
           <div class="logo-text">
             NATIONAL<br />
             CINEMA<br />
@@ -25,17 +31,28 @@
 
           <nav class="nav">
             <ul class="nav-menu">
-              <li><a href="../templates/home.html" >Trang Chủ</a></li>
-              <li><a href="#" class="active">Lịch Chiếu</a></li>
-              <li><a href="../templates/infor.html">Giới Thiệu</a></li>
+              <li>
+                <a href="{{ url_for('menu.homepage') }}">Trang Chủ</a>
+              </li>
+              <li>
+                <a href="{{ url_for('menu.showtime') }}" class="active"
+                  >Lịch Chiếu</a
+                >
+              </li>
+              <li><a href="{{ url_for('menu.intro') }}">Giới Thiệu</a></li>
             </ul>
           </nav>
 
           <div class="action">
-            <a href="#" class="btn btn2">Đăng Nhập</a>
-            <a href="#" class="btn btn1">Đăng Kí</a>
+            <a href="{{ url_for('login.login_user') }}" class="btn btn2"
+              >Đăng Nhập</a
+            >
+            <a href="{{ url_for('signup.sign_up') }}" class="btn btn1"
+              >Đăng Kí</a
+            >
           </div>
         </div>
       </div>
-    </header></body>
+    </header>
+  </body>
 </html>
