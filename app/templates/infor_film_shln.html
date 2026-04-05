@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="../static/bg/favicon/ico/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="../static/bg/favicon/ico/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="../static/bg/favicon/ico/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="../static/bg/favicon/ico/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="../static/bg/favicon/ico/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="../static/bg/favicon/ico/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="../static/bg/favicon/ico/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="../static/bg/favicon/ico/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../static/bg/favicon/ico/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="../static/bg/favicon/ico/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../static/bg/favicon/ico/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="../static/bg/favicon/ico/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../static/bg/favicon/ico/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../static/bg/favicon/ico/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="stylesheet" href="../static/reset.css" />
+    <!-- embed font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../static/infor_film.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <title>Rạp Chiếu Phim Quốc Gia</title>
+  </head>
+  <body style="height: 1000px">
+    <header>
+      <header class="header fixed">
+        <div class="main-content">
+          <div class="body">
+            <!-- logo -->
+            <img src="../static/bg/logoweb.jpg.webp" alt="" class="logo" />
+            <div class="logo-text">
+              NATIONAL<br />
+              CINEMA<br />
+              CENTER
+            </div>
+            <!-- nav -->
+            <nav class="nav">
+              <ul class="nav-menu">
+                <li>
+                  <a href="{{ url_for('menu.homepage') }}">Trang Chủ</a>
+                </li>
+                <li><a href="{{ url_for('menu.showtime') }}">Lịch Chiếu</a></li>
+                <li><a href="{{ url_for('menu.intro') }}">Giới Thiệu</a></li>
+              </ul>
+            </nav>
+            <!-- btn actions -->
+            <div class="action">
+              <a href="{{ url_for('login.login_user') }}" class="btn btn2"
+                >Đăng Nhập</a
+              >
+              <a href="{{ url_for('signup.sign_up') }}" class="btn btn1"
+                >Đăng Kí</a
+              >
+            </div>
+          </div>
+        </div>
+      </header>
+    </header>
+    <div class="pic-bg-shln">
+      <img
+        class
+        src="../static/bg/songhulamnguy.jpg"
+        alt="Background Song Hỷ Lâm Nguy"
+      />
+    </div>
+    <section class="vid_trailer_box">
+      <div class="vid_trailer_container"></div>
+    </section>
+    <section class="infor-shln">
+      <div class="box-poster">
+        <img src="../static/bg/shln-poster-infor.img" alt="" class="poster" />
+      </div>
+      <div class="title-film">
+        <div class="h2-title">
+          <h2 class="title">SONG HỶ LÂM NGUY-T13</h2>
+          <div class="tem-2d">2D</div>
+        </div>
+        <br /><br />
+        <ul>
+          <div class="ttin-film">
+            <li>
+              <p>Hài, Tâm Lý, Tình Cảm</p>
+            </li>
+            <li>
+              <p>Việt Nam</p>
+            </li>
+            <li>
+              <p>113 phút</p>
+            </li>
+            <li>
+              <p>Đạo Diễn : Vũ Hà</p>
+            </li>
+          </div>
+          <li>
+            <p class="actor_film">
+              Diễn viên: Dustin Nguyễn, Misthy, Trung Anh, Đinh Y Nhung, Jun Vũ,
+              Hoàng Phi, Hynee, Khoai Vũ
+            </p>
+          </li>
+          <li>
+            <p>Khởi chiếu: 03/04/2026</p>
+          </li>
+          <br /><br />
+          <li>
+            <p class="desc_shln">
+              Hai lễ cưới, một sang trọng sa hoa, một đạm bạc dân dã, đáng lý sẽ
+              được tổ chức đối diện nhau. Rắc rối bắt đầu khi đội ngũ tổ chức
+              của hai lễ cưới phát hiện ra danh sách khách mời của hai bên là
+              giống nhau.
+            </p>
+            <br />
+          </li>
+          <li>
+            <p class="kiemduyet_shln">
+              Kiểm duyệt: T13 - Phim được phổ biến đến người xem từ đủ 13 tuổi
+              trở lên (13+)
+            </p>
+          </li>
+          <br /><br /><br />
+        </ul>
+        <div class="link-a-and-trailer">
+          <a href="#" class="a-tab" id="open-rv">Chi Tiết Nội Dung</a>
+          <button href="#" class="trailer">Xem Trailer</button>
+        </div>
+      </div>
+    </section>
+    <section class="date-film">
+      <div class="calendar-shln">
+        <button class="date-but active">
+          <ul>
+            <li class="but-1">Th 04</li>
+            <li class="but-2">07</li>
+            <li class="but-1">Thứ Hai</li>
+          </ul>
+        </button>
+        <button class="date-but">
+          <ul>
+            <li class="but-1">Th 04</li>
+            <li class="but-2">08</li>
+            <li class="but-1">Thứ Ba</li>
+          </ul>
+        </button>
+        <button class="date-but">
+          <ul>
+            <li class="but-1">Th 04</li>
+            <li class="but-2">09</li>
+            <li class="but-1">Thứ Tư</li>
+          </ul>
+        </button>
+      </div>
+    </section>
+    <div class="box-review-shln" id="box-shln">
+      <div class="box-review-film">
+        <span class="close-rv" id="close-rv">&times;</span>
+        <h2 class="h2-review-film">Chi Tiết Nội Dung</h2>
+        <br />
+        <p class="p-review-film">
+          Hai lễ cưới, một sang trọng sa hoa, một đạm bạc dân dã, đáng lý sẽ
+          được tổ chức đối diện nhau. Rắc rối bắt đầu khi đội ngũ tổ chức của
+          hai lễ cưới phát hiện ra danh sách khách mời của hai bên là giống
+          nhau.
+        </p>
+      </div>
+    </div>
+    <script>
+      //Gom tất cả các nút ngày chiếu vào một danh sách
+      const dateButtons = document.querySelectorAll(".date-but");
+      // 2. Gắn sự kiện click cho từng nút
+      dateButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          // Tháo class 'active' (màu đỏ) ở TẤT CẢ các nút ra
+          dateButtons.forEach((btn) => {
+            btn.classList.remove("active");
+          });
+
+          // Gắn class 'active' (màu đỏ) vào chính cái nút vừa bị bấm
+          this.classList.add("active");
+        });
+      });
+    </script>
+    <script>
+      const openrv = document.getElementById("open-rv");
+      const closerv = document.getElementById("close-rv");
+      const overlay = document.getElementById("box-shln");
+      openrv.addEventListener("click", function () {
+        overlay.style.display = "flex";
+        document.body.style.overflow = "hidden";
+      });
+      closerv.addEventListener("click", function () {
+        overlay.style.display = "none";
+        document.body.style.overflow = "auto";
+      });
+    </script>
+  </body>
+</html>
