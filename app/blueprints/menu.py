@@ -14,3 +14,6 @@ def showtime():
 @menu.route("/intro")
 def intro():
     return render_template("infor.html")
+@menu.route("/shln")
+def film_shln():
+    return render_template("infor_film_shln.html")

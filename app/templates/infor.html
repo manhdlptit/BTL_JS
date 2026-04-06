@@ -1,74 +1,292 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/reset.css">
-    <link rel="stylesheet" href="../static/gioithieu1.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="../static/bg/favicon/ico/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="../static/bg/favicon/ico/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="../static/bg/favicon/ico/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="../static/bg/favicon/ico/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="../static/bg/favicon/ico/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="../static/bg/favicon/ico/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="../static/bg/favicon/ico/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="../static/bg/favicon/ico/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../static/bg/favicon/ico/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="../static/bg/favicon/ico/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../static/bg/favicon/ico/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="../static/bg/favicon/ico/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../static/bg/favicon/ico/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../static/bg/favicon/ico/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="stylesheet" href="../static/css/reset.css" />
+    <link rel="stylesheet" href="../static/css/gioithieu1.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <title>Rạp Chiếu Phim Quốc Gia</title>
-</head>
-<body>
-      </head>
-
+  </head>
   <body style="height: 5000px">
     <header class="header fixed">
       <div class="main-content">
         <div class="body">
-          <a href="./home.html"><img src="../static/bg/logoweb.jpg.webp" alt="Logo rạp" class="logo" /></a>
+          <a href="./home.html"
+            ><img
+              src="../static/bg/logoweb.jpg.webp"
+              alt="Logo rạp"
+              class="logo"
+          /></a>
           <div class="logo-text">
             NATIONAL<br />
             CINEMA<br />
             CENTER
           </div>
-          
+
           <nav class="nav">
             <ul class="nav-menu">
               <li>
-                  <a href="{{ url_for('menu.homepage') }}">Trang Chủ</a>
-                </li>
-                <li><a href="{{ url_for('menu.showtime') }}">Lịch Chiếu</a></li>
-                <li><a href="{{ url_for('menu.intro') }}" class="active">Giới Thiệu</a></li>
+                <a href="{{ url_for('menu.homepage') }}">Trang Chủ</a>
+              </li>
+              <li><a href="{{ url_for('menu.showtime') }}">Lịch Chiếu</a></li>
+              <li>
+                <a href="{{ url_for('menu.intro') }}" class="active"
+                  >Giới Thiệu</a
+                >
+              </li>
             </ul>
           </nav>
 
           <div class="action">
-            <a href="{{ url_for('login.login_user') }}" class="btn btn2">Đăng Nhập</a>
-            <a href="{{ url_for('signup.sign_up') }}" class="btn btn1">Đăng Kí</a>
+            <a href="{{ url_for('login.login_user') }}" class="btn btn2"
+              >Đăng Nhập</a
+            >
+            <a href="{{ url_for('signup.sign_up') }}" class="btn btn1"
+              >Đăng Kí</a
+            >
           </div>
         </div>
       </div>
     </header>
-    <!-- Phần Content Infor -->
-     <div class="gioithieu">
-      <h3 class="h3-gioithieu">Giới Thiệu</h3>
-     </div>
-     <div class="menu-gioithieu">
-      <li><a href="#" class="active">Giới Thiệu</a></li>
-      <li><a href="#">Dịch Vụ</a></li>
-      <li><a href="#">Phòng Chiếu-Nhà Hát</a></li>
-     </div>
-     <div class="content-gioithieu">
-      <p>Trung tâm Chiếu phim Quốc gia (tên giao dịch quốc tế là National Cinema Center) là đơn vị sự nghiệp công lập, trực thuộc Bộ Văn hóa, Thể thao và Du lịch, có chức năng tổ chức chiếu phim phục vụ các nhiệm vụ chính trị, xã hội, hợp tác quốc tế; trưng bày điện ảnh; điều tra xã hội học về nhu cầu khán giả để phục vụ cho công tác định hướng phát triển ngành điện ảnh.</p>
-      <pre class="infor-gioithieu">Ngày thành lập: 29/12/1997
-
-          Trụ sở: 87 Láng Hạ, Phường Ô Chợ Dừa, Thành phố Hà Nội.
-
-          Website: www.chieuphimquocgia.com.vn
-
-          Email: pdichvuncc@gmail.com
-
-          Số điện thoại: 024.3514 1791 / 024.3514 8647</pre>
+    <div class="body_intro">
+      <!-- Phần Content Infor -->
+      <div class="gioithieu">
+        <h3 class="h3-gioithieu">Giới Thiệu</h3>
+      </div>
+      <!-- Đoạn này Mạnh viết -->
+      <div class="button_click_tabbar">
+        <button onclick="openTab('gioi_thieu')" class="active">
+          Giới thiệu
+        </button>
+        <button onclick="openTab('dich_vu')">Dịch vụ</button>
+        <button onclick="openTab('phong_chieu_nha_hat')">
+          Phòng chiếu - Nhà hát
+        </button>
+      </div>
+      <div class="tabbar" id="gioi_thieu">
+        <div class="describe">
+          <p>
+            Trung tâm Chiếu phim Quốc gia (tên giao dịch quốc tế là National
+            Cinema Center) là đơn vị sự nghiệp công lập, trực thuộc Bộ Văn hóa,
+            Thể thao và Du lịch, có chức năng tổ chức chiếu phim phục vụ các
+            nhiệm vụ chính trị, xã hội, hợp tác quốc tế; trưng bày điện ảnh;
+            điều tra xã hội học về nhu cầu khán giả để phục vụ cho công tác định
+            hướng phát triển ngành điện ảnh.
+          </p>
+          <ul>
+            <li><p>Ngày thành lập: 29/12/1997</p></li>
+            <li>
+              <p>Trụ sở: 87 Láng Hạ, Phường Ô Chợ Dừa, Thành phố Hà Nội.</p>
+            </li>
+            <li><p>Website: www.chieuphimquocgia.com.vn</p></li>
+            <li><p>Email: pdichvuncc@gmail.com</p></li>
+            <li><p>Số điện thoại: 024.3514 1791 / 024.3514 8647</p></li>
+          </ul>
+        </div>
+        <div>
+          <img src="../static/bg/gthieu.png" alt="Giới Thiệu" />
+        </div>
+        <div>
+          <h3>Bộ Máy Tổ Chức Của Trung Tâm Chiếu Phim Quốc Gia</h3>
+        </div>
+        <div class="img-structure-gioithieu">
+          <img src="../static/bg/gioithieu-structure.png" alt="" />
+        </div>
+      </div>
+      <div class="tabbar" id="dich_vu" style="display: none">
+        <div class="describe">
+          <p>
+            Trung tâm Chiếu phim Quốc gia là một địa chỉ quen thuộc và yêu mến
+            đối với những người yêu điện ảnh Thủ đô và cả nước, là điểm đến giải
+            trí cực kỳ hấp dẫn dành cho mọi lứa tuổi với nhiều hoạt động dịch vụ
+            đa dạng.
+          </p>
+          <p class="h4">1. Hoạt động điện ảnh:</p>
+          <ul>
+            <li><p>- Chiếu phim phục vụ các nhiệm vụ chính trị, xã hội.</p></li>
+            <li><img src="../static/bg/dv1.jpg" alt="" /></li>
+            <li>
+              <p>
+                - Tổ chức, thực hiện Liên hoan phim, Tuần lễ phim trong nước,
+                Khu vực và Quốc tế.
+              </p>
+            </li>
+            <li><img src="../static/bg/dv2.jpg" alt="" /></li>
+            <li><p>- Chiếu phim phục vụ khán giả.</p></li>
+            <li><img src="../static/bg/dv3.jpg" alt="" /></li>
+            <li><img src="../static/bg/dv4.jpg" alt="" /></li>
+            <li>
+              <p>
+                - Phát hành và phổ biến phim bao gồm cả phim sử dụng ngân sách
+                Nhà nước.
+              </p>
+            </li>
+            <li><p>- Trưng bày điện ảnh.</p></li>
+            <li><img src="../static/bg/dv5.jpg" alt="" /></li>
+          </ul>
+          <p class="h4">2. Hoạt động biểu diễn nghệ thuật, ca nhạc tạp kỹ:</p>
+          <ul><img src="../static/bg/dv1.jpg" alt=""></li></ul>
+          <p class="h4">3. Dịch vụ khác:</p>
+          <ul>
+            <li>
+              <p>
+                - Tổ chức sự kiện (Sự kiện, hội nghị hội thảo, ra mắt phim...).
+              </p>
+            </li>
+            <li><img src="../static/bg/dv7.jpg" alt=""></li>
+            <li><img src="../static/bg/dv8.jpg" alt=""></li>
+            <li><p>- Vui chơi giải trí.</p></li>
+            <li><img src="../static/bg/dv9.jpg" alt=""></li>
+            <li><p>- Ẩm thực.</p></li>
+            <li><img src="../static/bg/dv10.jpg" alt=""></li>
+            <li><p>- Quảng cáo thương mại.</p></li>
+            <li><img src="../static/bg/dv11.jpg" alt=""></li>
+          </ul>
+          <p>
+            Trung tâm Chiếu phim Quốc gia rất hân hạnh được đón tiếp và phục vụ
+            quý khách hàng.
+          </p>
+        </div>
+      </div>
+      <div class="tabbar" id="phong_chieu_nha_hat" style="display: none">
+        <div class="describe">
+          <ul>
+            <li>
+              <p>
+                Khu chiếu phim 3 tầng với 14 phòng chiếu, âm thanh, ánh sáng
+                chất lượng cao, Trung tâm Chiếu phim Quốc gia trình chiếu được
+                các thể loại phim: 2D, 3D, không gian rộng rãi, bắt mắt. Các
+                phòng chiếu phim của Trung tâm có tổng cộng 2.365 chỗ ngồi với
+                hơn 60 suất chiếu/ ngày. Phòng lớn nhất 402 chỗ, phòng nhỏ nhất
+                98 chỗ.
+              </p>
+            </li>
+            <li>
+              <p>
+                Hàng năm, Trung tâm Chiếu phim Quốc gia được đón tiếp nhiều đoàn
+                khách tập thể đến xem phim từ các Trường Mẫu giáo, Tiểu học,
+                THCS, THPT, đơn vị, công ty . . . quy mô phục vụ lên tới hơn
+                2000 khách/lượt. Các đối tác thân thiết của Trung tâm xem phim
+                thường xuyên tại đây như trường Tiểu học Đoàn Thị Điểm, trường
+                THCS Đoàn Thị Điểm, trường liên cấp Vinschool, trường Tiểu học
+                Newton Goldmark, trường Tiểu học I-sắc Niu-tơn...
+              </p>
+            </li>
+            <li>
+              <img src="../static/bg/pcnh1.jpg" alt="" />
+            </li>
+            <li>
+              <p>
+                Khu trưng bày điện ảnh – Biểu diễn nghệ thuật – Tổ chức sự kiện
+                là khối nhà 5 tầng, mặt tiền nằm phía đường Láng Hạ. Tầng 1, 3,
+                4 có khả năng phục vụ lên tới hơn 1000 chỗ là nơi chuyên tổ chức
+                các sự kiện, hội nghị, hội thảo, họp báo, tiệc cưới, tri ân
+                khách hàng, sinh nhật... Tầng 2 Nhà hát với sức chứa hơn 300 chỗ
+                là nơi khán giả có thể thưởng thức các chương trình nghệ thuật
+                tạp kỹ đặc sắc và các sự kiện, hội nghị, họp báo... Vào ngày
+                20/5/2025, Nhà hát chính thức ra mắt với tên gọi mới Nhà hát
+                Ngôi sao, đánh dấu mốc 10 năm thành lập Nhà hát.
+              </p>
+            </li>
+            <li><img src="../static/bg/pcnh5.jpg" alt="" /></li>
+            <li><img src="../static/bg/pcnh6.jpg" alt="" /></li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="pic-gioithieu">
-      <img src="../static/bg/gthieu.1" alt="Giới Thiệu">
-    </div>
-    <div class="structure-gioithieu">
-      <h3 class="content-structure-gioithieu">Bộ Máy Tổ Chức Của Trung Tâm Chiếu Phim Quốc Gia</h3>
-    </div>
-    <div class="img-structure-gioithieu"><img src="../static/bg/gioithieu-structure" alt=""></div>
-
-</body>
+    <script>
+      function openTab(name) {
+        let i = 0;
+        let x = document.getElementsByClassName("tabbar");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        let buttons = document.querySelectorAll(".button_click_tabbar button");
+        buttons.forEach(function(btn){
+          btn.classList.remove("active")
+        })
+        document.getElementById(name).style.display = "block";
+        event.currentTarget.classList.add("active");
+      }
+    </script>
+  </body>
 </html>

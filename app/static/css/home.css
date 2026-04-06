@@ -33,10 +33,12 @@ ul {
   padding: 10px 10px 10px;
   font-size: 10px;
 }
-.header {
+
+/*  Mạnh bỏ phần .header ở đây */
+/* .header {
   background-color: #1a1d24;
   padding: 10px 40px;
-}
+} */
 .nav {
   margin: auto;
   padding: 10px 40px;
@@ -186,8 +188,8 @@ i {
   max-height: 300px; */
   overflow: hidden;
   transition: transform 0.3s ease;
-  color: aliceblue; /* Ép chữ bên trong thành màu trắng */
-  display: flex; /* Dùng flexbox để xếp ảnh và chữ dọc theo nhau */
+  color: aliceblue;
+  display: flex;
   flex-direction: column;
 }
 .poster {
@@ -215,60 +217,4 @@ i {
 }
 .pic-film-list {
   margin: 20px 20px;
-}
-/* footer */
-footer {
-  background-color: #1a1d24;
-}
-.menu-last-page ul {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-.menu-last-page {
-  padding-top: 35px;
-  padding-bottom: 35px;
-}
-.social-link {
-  padding-bottom: 35px;
-}
-.social-link ul {
-  display: flex;
-  gap: 35px;
-  align-items: center;
-  justify-content: center;
-  list-style: none;
-}
-.yt-tab,
-.fb-tab {
-  max-height: 10px;
-  max-width: 10px;
-}
-.social-link img {
-  height: 35px;
-  width: auto;
-  display: block;
-  border-radius: 4px;
-}
-.owner-centre {
-  display: block;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding-bottom: 30px;
-}
-.owner-centre ul {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 0;
-  line-height: 2.5rem;
-}
-.owner-centre {
-  color: aliceblue !important;
-}
-.menu-last-page a {
-  color: aliceblue !important;
 }

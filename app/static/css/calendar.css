@@ -1,0 +1,158 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  background-color: rgba(15, 18, 23);
+  font-size: 1.6rem;
+  font-family: "Montserrat", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+.logo {
+  height: 50px;
+  padding: 10px 0px 10px 10px;
+}
+.header .body {
+  display: flex;
+}
+.nav ul {
+  display: flex;
+}
+.nav a {
+  color: aliceblue;
+}
+.logo-text {
+  color: aliceblue;
+  padding: 10px 10px 10px;
+  font-size: 10px;
+}
+/* Mạnh xoá .header */
+.nav {
+  margin: auto;
+  padding: 10px 40px;
+}
+.nav-menu {
+  padding: 10px 20px;
+  gap: 40px;
+}
+.nav ul li a:hover {
+  color: red;
+}
+.action {
+  display: flex;
+  padding: 10px 20px;
+  gap: 30px;
+}
+.btn {
+  color: aliceblue;
+  border-radius: 30px;
+  background: #1a1d24;
+  display: inline-block;
+  padding: 10px;
+  width: 150px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+.btn.btn1 {
+  background: linear-gradient(90deg, #ff416c, #ff4b2b);
+}
+.btn.btn2 {
+  border: 1px solid;
+}
+.btn:hover {
+  transform: scale(1.05);
+}
+.nav-menu a.active {
+  color: #ff3b3b;
+}
+
+/* đoạn này Mạnh viết */
+
+.surround_film {
+  margin-top: 8rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.inf_film {
+  height: 30rem;
+  width: 48%;
+  background-color: rgb(12, 2, 2);
+  box-sizing: border-box;
+  display: flex;
+  line-height: 3rem;
+  border: 0.1rem solid rgba(73, 73, 73, 0.784);
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 1rem;
+}
+
+.inf_film h3 {
+  font-size: 2.5rem;
+  color: white;
+}
+
+.inf_film h4 {
+  font-size: 2rem;
+}
+
+.inf_film img {
+  width: 20rem;
+  height: 100%;
+}
+
+.inf_film .right {
+  box-sizing: border-box;
+  padding: 1rem 2rem;
+}
+
+.blur {
+  display: flex;
+}
+.blur p {
+  color: rgb(206, 206, 207);
+}
+
+.blur p:last-child {
+  margin-left: 4rem;
+}
+
+.white {
+  color: white;
+}
+
+.red {
+  color: red;
+}
+
+button {
+  margin: 0.1rem 0rem;
+  height: 3rem;
+  width: 5rem;
+}
+
+h4 {
+  color: white;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(30px);
+  padding: 1rem;
+}
+
+a {
+  cursor: pointer;
+}
