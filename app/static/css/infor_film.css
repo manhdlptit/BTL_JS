@@ -290,3 +290,14 @@ footer {
 .menu-last-page a {
   color: aliceblue !important;
 }
+
+/* Đoạn này Mạnh viết */
+
+.header {
+  background-color: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(30px);
+  padding: 1rem;
+}
+.hero-banner {
+  margin-top: 7rem;
+}
