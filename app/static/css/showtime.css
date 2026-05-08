@@ -1,26 +1,82 @@
+* {
+  box-sizing: border-box;
+}
 html {
   font-size: 62.5%;
-  margin: 0 4rem;
 }
-
 body {
+  background-color: rgba(15, 18, 23);
   font-size: 1.6rem;
-  background-color: pink;
+  font-family: "Montserrat", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+.logo {
+  height: 50px;
+  padding: 10px 0px 10px 10px;
+}
+.header .body {
+  display: flex;
+}
+.nav ul {
+  display: flex;
+}
+.nav a {
+  color: aliceblue;
+}
+.logo-text {
+  color: aliceblue;
+  padding: 10px 10px 10px;
+  font-size: 10px;
+}
+/* Mạnh xoá .header */
+.nav {
+  margin: auto;
+  padding: 10px 40px;
+}
+.nav-menu {
+  padding: 10px 20px;
+  gap: 40px;
+}
+.nav ul li a:hover {
+  color: red;
+}
+.action {
+  display: flex;
+  padding: 10px 20px;
+  gap: 30px;
+}
+.btn {
+  color: aliceblue;
+  border-radius: 30px;
+  background: #1a1d24;
+  display: inline-block;
+  padding: 10px;
+  width: 150px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+.btn.btn1 {
+  background: linear-gradient(90deg, #ff416c, #ff4b2b);
+}
+.btn.btn2 {
+  border: 1px solid;
+}
+.btn:hover {
+  transform: scale(1.05);
+}
+.nav-menu a.active {
+  color: #ff3b3b;
 }
 
-h1 {
-  font-size: 5rem;
-  text-align: center;
-  margin: 1rem;
-}
-
-h2 {
-  font-size: 4rem;
-  margin: 1rem;
-  text-align: center;
-}
+/* đoạn này Mạnh viết */
 
 .surround_film {
+  margin-top: 8rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -33,7 +89,7 @@ h2 {
   box-sizing: border-box;
   display: flex;
   line-height: 3rem;
-  border: 0.1rem inset black;
+  border: 0.1rem solid rgba(73, 73, 73, 0.784);
   border-radius: 15px;
   overflow: hidden;
   margin: 1rem;
@@ -85,4 +141,75 @@ button {
 
 h4 {
   color: white;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(30px);
+  padding: 1rem;
+}
+
+a {
+  cursor: pointer;
+}
+
+/* footer */
+footer {
+  background-color: #1a1d24;
+}
+.menu-last-page ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.menu-last-page {
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+.social-link {
+  padding-bottom: 35px;
+}
+.social-link ul {
+  display: flex;
+  gap: 35px;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+.yt-tab,
+.fb-tab {
+  max-height: 10px;
+  max-width: 10px;
+}
+.social-link img {
+  height: 35px;
+  width: auto;
+  display: block;
+  border-radius: 4px;
+}
+.owner-centre {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 30px;
+}
+.owner-centre ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0;
+  line-height: 2.5rem;
+}
+.owner-centre {
+  color: aliceblue !important;
+}
+.menu-last-page a {
+  color: aliceblue !important;
 }

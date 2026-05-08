@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
 load_dotenv()
 from flask import Blueprint, request, redirect, url_for, render_template, jsonify
+from werkzeug.security import check_password_hash
 from app.blueprints.model import User, db
 from app.blueprints.menu import menu
 
@@ -18,7 +19,7 @@ def login_user():
             return jsonify({"error": "not null any value"}),400    
         if find_username is None:
             return jsonify({"error": "not find username"}),404   
-        if password != find_username.password:
+        if not check_password_hash(find_username.password, password):
             return jsonify({"error": "password different check password"}),400    
 
         return redirect(url_for("menu.homepage"))

@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 load_dotenv()
 from flask import Blueprint, request, redirect, url_for, render_template, jsonify
-from app.blueprints.model import User, db
+from app.blueprints.model import Movies
 
 menu = Blueprint("menu", __name__)
 
@@ -10,7 +10,8 @@ def homepage():
     return render_template("home.html")
 @menu.route("/showtime")
 def showtime():
-    return render_template("calendar.html")
+    movies = Movies.query.all()
+    return render_template("showtime.html", movies = movies)
 @menu.route("/intro")
 def intro():
     return render_template("infor.html")

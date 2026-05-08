@@ -1,12 +1,14 @@
 from dotenv import load_dotenv
 load_dotenv()
 from flask import Blueprint, request, redirect, url_for, render_template, jsonify
+from werkzeug.security import generate_password_hash
 from app.blueprints.model import User, db
 from app.blueprints.login import login
 
 signup = Blueprint("signup", __name__)
 
 @signup.route("/", methods = ["GET","POST"])
+@signup.route("/signup", methods = ["GET","POST"])
 def sign_up():
     if request.method == "POST":
         email = request.form.get("email")
@@ -29,8 +31,8 @@ def sign_up():
             return jsonify({"error": "8 <= length password <= 16"}),400      
         if password != check_password:
             return jsonify({"error": "password different check password"}),400     
-    
-        new_user = User(email=email,username=username, password=password)
+        gen_password = generate_password_hash(password)
+        new_user = User(email=email,username=username, password=gen_password)
         db.session.add(new_user)
         db.session.commit()
 
