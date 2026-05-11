@@ -1,138 +1,18 @@
-<!doctype html>
-<html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="apple-touch-icon"
-      sizes="57x57"
-      href="../static/bg/favicon/ico/apple-icon-57x57.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="60x60"
-      href="../static/bg/favicon/ico/apple-icon-60x60.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="72x72"
-      href="../static/bg/favicon/ico/apple-icon-72x72.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="76x76"
-      href="../static/bg/favicon/ico/apple-icon-76x76.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="114x114"
-      href="../static/bg/favicon/ico/apple-icon-114x114.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="120x120"
-      href="../static/bg/favicon/ico/apple-icon-120x120.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="144x144"
-      href="../static/bg/favicon/ico/apple-icon-144x144.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="152x152"
-      href="../static/bg/favicon/ico/apple-icon-152x152.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="../static/bg/favicon/ico/apple-icon-180x180.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="192x192"
-      href="../static/bg/favicon/ico/android-icon-192x192.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="../static/bg/favicon/ico/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="96x96"
-      href="../static/bg/favicon/ico/favicon-96x96.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="../static/bg/favicon/ico/favicon-16x16.png"
-    />
-    <link rel="manifest" href="../static/bg/favicon/ico/manifest.json" />
-    <meta name="msapplication-TileColor" content="#ffffff" />
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
-    <meta name="theme-color" content="#ffffff" />
-    <link rel="stylesheet" href="../static/css/reset.css" />
-    <link rel="stylesheet" href="../static/css/gioithieu1.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <title>Rạp Chiếu Phim Quốc Gia</title>
-  </head>
-  <body style="height: 5000px">
-    <header class="header fixed">
-      <div class="main-content">
-        <div class="body">
-          <a href="./home.html"
-            ><img
-              src="../static/bg/logoweb.jpg.webp"
-              alt="Logo rạp"
-              class="logo"
-          /></a>
-          <div class="logo-text">
-            NATIONAL<br />
-            CINEMA<br />
-            CENTER
-          </div>
-
-          <nav class="nav">
-            <ul class="nav-menu">
-              <li>
-                <a href="{{ url_for('menu.homepage') }}">Trang Chủ</a>
-              </li>
-              <li><a href="{{ url_for('menu.showtime') }}">Lịch Chiếu</a></li>
-              <li>
-                <a href="{{ url_for('menu.intro') }}" class="active"
-                  >Giới Thiệu</a
-                >
-              </li>
-            </ul>
-          </nav>
-
-          <div class="action">
-            <a href="{{ url_for('login.login_user') }}" class="btn btn2"
-              >Đăng Nhập</a
-            >
-            <a href="{{ url_for('signup.sign_up') }}" class="btn btn1"
-              >Đăng Kí</a
-            >
-          </div>
-        </div>
-      </div>
-    </header>
-    <div class="body_intro">
-      <!-- Phần Content Infor -->
+{%extends "base_user.html"%} 
+{%block css%}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/infor.css') }}">
+{%endblock%} 
+{%block nav%}
+<li><a href="{{ url_for('menu.homepage') }}" >Trang Chủ</a></li>
+<li><a href="{{ url_for('menu.showtime') }}">Lịch Chiếu</a></li>
+<li><a href="{{ url_for('menu.intro') }}" class="active">Giới Thiệu</a></li>
+{%endblock%}
+{%block content%} 
+  <div class="body_intro">
       <div class="gioithieu">
         <h3 class="h3-gioithieu">Giới Thiệu</h3>
       </div>
-      <!-- Đoạn này Mạnh viết -->
       <div class="button_click_tabbar">
         <button onclick="openTab('gioi_thieu')" class="active">
           Giới thiệu
@@ -273,112 +153,6 @@
         </div>
       </div>
     </div>
-    <footer class="last-page">
-      <div class="box-footer">
-        <div class="menu-last-page">
-          <ul>
-            <li><a href="#">Chính Sách</a></li>
-            <li><a href="#">Lịch Chiếu</a></li>
-            <li><a href="#">Tin Tức</a></li>
-            <li><a href="#">Giá Vé</a></li>
-            <li><a href="#">Hỏi Đáp</a></li>
-            <li><a href="#">Đặt Vé Nhóm,Tập Thể</a></li>
-            <li><a href="#">Liên Hệ</a></li>
-          </ul>
-        </div>
-        <div class="social-link">
-          <ul>
-            <li>
-              <a
-                href="https://www.facebook.com/chieuphimquocgiavn/"
-                target="_blank"
-                class="fb-tab"
-                ><img
-                  src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg"
-                  alt="FB"
-              /></a>
-            </li>
-            <li>
-              <a href="https://oa.zalo.me/ttcpqg" target="_blank" class="zl-tab"
-                ><img
-                  src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg"
-                  alt="Zalo"
-              /></a>
-            </li>
-            <li>
-              <a
-                href="https://www.youtube.com/@TrungtamChieuphimQuocgiaNCC"
-                target="_blank"
-                class="yt-tab"
-                ><img
-                  src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg"
-                  alt="YT"
-              /></a>
-            </li>
-            <li>
-              <a
-                href="https://play.google.com/store/apps/details?id=vn.com.chieuphimquocgia.app&hl=en_US"
-                target="_blank"
-                class="chplay-tab"
-                ><img
-                  src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-                  alt="Google Play"
-              /></a>
-            </li>
-            <li>
-              <a
-                href="https://apps.apple.com/vn/app/chi%E1%BA%BFu-phim-qu%E1%BB%91c-gia-ncc/id6446946150"
-                target="_blank"
-                class="appstore-tab"
-                ><img
-                  src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
-                  alt="App Store"
-              /></a>
-            </li>
-            <li>
-              <a
-                href="http://online.gov.vn/Home/WebDetails/4519"
-                target="_blank"
-                class="bocongthuong-tab"
-                ><img
-                  src="../static/bg/logo-bct-ft.jpg"
-                  alt="Đã thông báo Bộ Công Thương"
-                  style="height: 45px"
-              /></a>
-            </li>
-          </ul>
-        </div>
-        <div class="owner-centre">
-          <ul>
-            <li>
-              <p>Cơ quan chủ quản: BỘ VĂN HÓA, THỂ THAO VÀ DU LỊCH</p>
-            </li>
-            <li>
-              <p>Bản quyền thuộc Trung tâm Chiếu phim Quốc gia.</p>
-            </li>
-            <li>
-              <p>
-                Giấy phép số: 224/GP- TTĐT ngày 31/8/2010 - Chịu trách nhiệm: Vũ
-                Đức Tùng - Giám đốc.
-              </p>
-            </li>
-            <li>
-              <p>
-                Địa chỉ: Số 87 Láng Hạ, Phường Ô Chợ Dừa, TP.Hà Nội - Điện
-                thoại: 024.35141791
-              </p>
-            </li>
-            <br /><br />
-            <li>
-              <p>
-                Copyright 2026. NCC All Rights Reservered. Dev by
-                TuanDatandDucManh.vn
-              </p>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </footer>
     <script>
       function openTab(name) {
         let i = 0;
@@ -394,5 +168,4 @@
         event.currentTarget.classList.add("active");
       }
     </script>
-  </body>
-</html>
+{%endblock%}

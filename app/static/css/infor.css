@@ -1,0 +1,71 @@
+ul {
+  margin-left: 2rem;
+}
+
+.img-structure-gioithieu img {
+  width: 100%;
+}
+
+.body_intro {
+  margin: 0 8rem;
+  margin-top: 10rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.button_click_tabbar {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem;
+}
+
+.button_click_tabbar button {
+  height: 4rem;
+  min-width: 14rem;
+  padding: 0 25px;
+  border-radius: 20px;
+  color: white;
+  font-size: 1.5rem;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid rgba(69, 119, 210, 0.1);
+}
+
+.button_click_tabbar button.active {
+  background: linear-gradient(90deg, #ff416c, #ff4b2b);
+}
+
+.button_click_tabbar button:hover:not(.active) {
+  background: #31383f;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(30px);
+  padding: 1rem;
+}
+
+.header {
+  padding: 1rem 8rem;
+}
+
+.describe {
+  margin-top: 4rem;
+  line-height: 2.5rem;
+}
+
+.describe p {
+  text-indent: 1rem;
+}
+
+.describe .h4 {
+  font-weight: bold;
+}

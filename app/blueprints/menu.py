@@ -18,3 +18,7 @@ def intro():
 @menu.route("/shln")
 def film_shln():
     return render_template("infor_film_shln.html")
+@menu.route("/abc")
+def abc():
+    movies = Movies.query.all()
+    return render_template("abc.html", movies = movies)
