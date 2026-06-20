@@ -69,7 +69,7 @@ const products = [
   {
     id: 8,
     name: "Ly nước Capybara",
-    price: 350000,
+    price: 100000,
     image: "../static/img/8.jpg",
     category: "inner-child",
     starGroup: "Cốc / Ly",
@@ -77,7 +77,7 @@ const products = [
   {
     id: 9,
     name: "BTS ARIRANG Popcorn Tin",
-    price: 275000,
+    price: 50000,
     image: "../static/img/9.jpg",
     category: "yolo",
     starGroup: "Bắp rang / Khác",
@@ -85,7 +85,7 @@ const products = [
   {
     id: 10,
     name: "Fanta",
-    price: 275000,
+    price: 15000,
     image: "../static/img/10.jpg",
     category: "yolo",
     starGroup: "Nước Ngọt",
@@ -93,7 +93,7 @@ const products = [
   {
     id: 11,
     name: "Coca",
-    price: 275000,
+    price: 20000,
     image: "../static/img/11.png",
     category: "yolo",
     starGroup: "Nước Ngọt",
@@ -101,7 +101,7 @@ const products = [
   {
     id: 12,
     name: "Sprite",
-    price: 275000,
+    price: 15000,
     image: "../static/img/12.png",
     category: "yolo",
     starGroup: "Nước Ngọt",
@@ -109,7 +109,7 @@ const products = [
   {
     id: 13,
     name: "Coca Zero",
-    price: 275000,
+    price: 20000,
     image: "../static/img/13.png",
     category: "yolo",
     starGroup: "Nước Ngọt",
@@ -117,7 +117,7 @@ const products = [
   {
     id: 14,
     name: "Dasani",
-    price: 275000,
+    price: 10000,
     image: "../static/img/14.png",
     category: "yolo",
     starGroup: "Nước Ngọt",
@@ -125,7 +125,7 @@ const products = [
   {
     id: 15,
     name: "Nutri Boost",
-    price: 275000,
+    price: 15000,
     image: "../static/img/15.png",
     category: "yolo",
     starGroup: "Nước Ngọt",
@@ -133,7 +133,7 @@ const products = [
   {
     id: 16,
     name: "Nước Cam Ép Teppy",
-    price: 275000,
+    price: 15000,
     image: "../static/img/16.png",
     category: "yolo",
     starGroup: "Nước Ngọt",
@@ -141,7 +141,7 @@ const products = [
   {
     id: 17,
     name: "Lay's Khoai Tây",
-    price: 275000,
+    price: 20000,
     image: "../static/img/17.png",
     category: "yolo",
     starGroup: "Bim Bim",
@@ -149,7 +149,7 @@ const products = [
   {
     id: 18,
     name: "Lay's Khoai Tây Vàng",
-    price: 275000,
+    price: 15000,
     image: "../static/img/18.png",
     category: "yolo",
     starGroup: "Bim Bim",
@@ -157,7 +157,7 @@ const products = [
   {
     id: 19,
     name: "Lay's Khoai Tây Đỏ",
-    price: 275000,
+    price: 15000,
     image: "../static/img/19.png",
     category: "yolo",
     starGroup: "Bim Bim",
