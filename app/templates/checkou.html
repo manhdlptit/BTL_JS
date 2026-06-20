@@ -1,0 +1,833 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../static/css/styleshop.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <title>Thanh Toán - National Cinema Center</title>
+    <!-- ============= CSS STYLING ============= -->
+    <style>
+      /* ===============================================================
+          === ENHANCED CHECKOUT STYLES (improved UI/UX) ===
+          =============================================================== */
+
+      /* Main checkout section - more breathing room */
+      .checkout-main {
+        padding: 20px 0 60px;
+        min-height: 60vh;
+      }
+
+      /* Container layout refinement */
+      .checkout-container {
+        gap: 32px;
+      }
+
+      /* ---- Checkout Section Cards ---- */
+      .checkout-section {
+        padding: 28px 30px;
+        margin-bottom: 24px;
+        background: linear-gradient(
+          145deg,
+          rgba(40, 50, 70, 0.6) 0%,
+          rgba(25, 35, 50, 0.5) 100%
+        );
+        border: 1px solid rgba(100, 150, 255, 0.15);
+        border-radius: 14px;
+        box-shadow:
+          0 8px 32px rgba(0, 0, 0, 0.3),
+          inset 0 1px 0 rgba(255, 255, 255, 0.04);
+        transition: all 0.3s ease;
+      }
+
+      .checkout-section:hover {
+        border-color: rgba(255, 107, 74, 0.25);
+        box-shadow:
+          0 12px 40px rgba(0, 0, 0, 0.4),
+          inset 0 1px 0 rgba(255, 255, 255, 0.06);
+        background: linear-gradient(
+          145deg,
+          rgba(50, 60, 85, 0.6) 0%,
+          rgba(30, 42, 60, 0.5) 100%
+        );
+      }
+
+      /* Section headings */
+      .checkout-section h2 {
+        font-size: 1.9rem;
+        font-weight: 700;
+        color: #f0f6ff;
+        margin-bottom: 20px;
+        padding-bottom: 12px;
+        border-bottom: 2px solid rgba(255, 107, 74, 0.3);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        letter-spacing: 0.3px;
+        text-shadow: 0 0 20px rgba(255, 107, 74, 0.1);
+      }
+
+      .checkout-section h2::before {
+        content: "";
+        display: inline-block;
+        width: 4px;
+        height: 20px;
+        background: linear-gradient(180deg, #ff6b4a, #ffb347);
+        border-radius: 4px;
+        box-shadow: 0 0 8px rgba(255, 107, 74, 0.4);
+      }
+
+      /* ---- Form Labels ---- */
+      .checkout-section label {
+        display: block;
+        color: #c8d6e8;
+        font-size: 1.35rem;
+        font-weight: 600;
+        margin-bottom: 6px;
+        margin-top: 16px;
+        letter-spacing: 0.2px;
+        text-transform: uppercase;
+      }
+
+      .checkout-section label:first-of-type {
+        margin-top: 0;
+      }
+
+      /* ---- Form Inputs ---- */
+      .checkout-section input,
+      .checkout-section select,
+      .checkout-section textarea {
+        width: 100%;
+        padding: 12px 16px;
+        border-radius: 10px;
+        border: 1.5px solid rgba(100, 150, 255, 0.12);
+        background: rgba(20, 30, 50, 0.5);
+        color: #e8f0ff;
+        font-size: 1.5rem;
+        font-family: "Montserrat", sans-serif;
+        transition: all 0.25s ease;
+        outline: none;
+        box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.3);
+      }
+
+      .checkout-section input:hover,
+      .checkout-section textarea:hover {
+        border-color: rgba(100, 150, 255, 0.25);
+        background: rgba(25, 38, 60, 0.5);
+      }
+
+      .checkout-section input:focus,
+      .checkout-section select:focus,
+      .checkout-section textarea:focus {
+        border-color: #ff6b4a;
+        background: rgba(255, 107, 74, 0.06);
+        box-shadow:
+          0 0 0 3px rgba(255, 107, 74, 0.12),
+          0 0 20px rgba(255, 107, 74, 0.05),
+          inset 0 2px 6px rgba(0, 0, 0, 0.3);
+      }
+
+      .checkout-section textarea {
+        resize: vertical;
+        min-height: 70px;
+        line-height: 1.5;
+      }
+
+      /* Placeholder styling */
+      .checkout-section input::placeholder,
+      .checkout-section textarea::placeholder {
+        color: rgba(180, 200, 230, 0.3);
+        font-size: 1.4rem;
+        font-weight: 400;
+      }
+
+      /* Required indicator - subtle asterisk on labels */
+      .checkout-section label:has(+ input[required])::after,
+      .checkout-section label:has(+ textarea[required])::after {
+        content: " *";
+        color: #ff6b4a;
+        font-weight: 700;
+        text-shadow: 0 0 8px rgba(255, 107, 74, 0.3);
+      }
+
+      /* ---- Payment Method Options ---- */
+      .payment-method {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 6px;
+      }
+
+      .payment-option {
+        display: flex !important;
+        align-items: center;
+        gap: 14px;
+        padding: 14px 18px;
+        background: rgba(30, 42, 65, 0.5);
+        border: 1.5px solid rgba(100, 150, 255, 0.1);
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.25s ease;
+        margin-top: 0 !important;
+      }
+
+      .payment-option:hover {
+        background: rgba(40, 55, 85, 0.6);
+        border-color: rgba(100, 150, 255, 0.25);
+        transform: translateX(4px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .payment-option:has(input[type="radio"]:checked) {
+        background: rgba(255, 107, 74, 0.08);
+        border-color: #ff6b4a;
+        box-shadow:
+          0 0 0 1px rgba(255, 107, 74, 0.2),
+          0 4px 15px rgba(255, 107, 74, 0.08);
+      }
+
+      .payment-option input[type="radio"] {
+        width: 18px;
+        height: 18px;
+        accent-color: #ff6b4a;
+        cursor: pointer;
+        margin: 0;
+        flex-shrink: 0;
+        box-shadow: none;
+      }
+
+      .payment-option span {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: #dce8f5;
+        letter-spacing: 0.2px;
+      }
+
+      /* ---- Back Link ---- */
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: #7ab8ff !important;
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+        padding: 8px 14px;
+        border-radius: 8px;
+        transition: all 0.25s ease;
+        background: rgba(30, 42, 65, 0.4);
+        border: 1px solid rgba(100, 150, 255, 0.1);
+      }
+
+      .back-link:hover {
+        color: #a0d0ff !important;
+        background: rgba(40, 55, 85, 0.5);
+        transform: translateX(-3px);
+        border-color: rgba(100, 150, 255, 0.2);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      }
+
+      /* ---- Order Summary (Right Column) ---- */
+      .order-summary-card {
+        background: linear-gradient(
+          145deg,
+          rgba(40, 50, 70, 0.6) 0%,
+          rgba(25, 35, 50, 0.5) 100%
+        );
+        border: 1px solid rgba(100, 150, 255, 0.15);
+        border-radius: 14px;
+        padding: 24px 28px;
+        box-shadow:
+          0 8px 32px rgba(0, 0, 0, 0.3),
+          inset 0 1px 0 rgba(255, 255, 255, 0.04);
+        position: sticky;
+        top: 100px;
+      }
+
+      .order-summary-card:hover {
+        border-color: rgba(255, 107, 74, 0.2);
+      }
+
+      /* Cart items list inside order summary */
+      .cart-items-review {
+        margin: 12px 0 16px;
+        border: none;
+        background: transparent;
+      }
+
+      .cart-item-review {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(100, 150, 255, 0.08);
+      }
+
+      .cart-item-review:last-child {
+        border-bottom: none;
+      }
+
+      .cart-item-review span:first-child {
+        font-size: 1.4rem;
+        color: #d0dcee;
+        flex: 1;
+        padding-right: 12px;
+      }
+
+      .cart-item-review span:last-child {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #ffb347;
+        text-shadow: 0 0 10px rgba(255, 179, 71, 0.15);
+        white-space: nowrap;
+      }
+
+      /* Summary rows (Subtotal, Shipping, Total) */
+      .order-summary {
+        margin-top: 8px;
+        padding-top: 12px;
+        border-top: 2px solid rgba(100, 150, 255, 0.08);
+      }
+
+      .summary-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+      }
+
+      .summary-row span:first-child {
+        font-size: 1.45rem;
+        color: #b8c8dc;
+      }
+
+      .summary-row span:last-child {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #dce8f5;
+      }
+
+      .summary-row.total {
+        margin-top: 8px;
+        padding-top: 14px;
+        border-top: 1.5px solid rgba(255, 107, 74, 0.25);
+      }
+
+      .summary-row.total span:first-child {
+        font-size: 1.7rem;
+        font-weight: 700;
+        color: #f0f6ff;
+        text-shadow: 0 0 10px rgba(255, 107, 74, 0.05);
+      }
+
+      .summary-row.total span:last-child {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #ff6b4a;
+        text-shadow: 0 0 25px rgba(255, 107, 74, 0.2);
+      }
+
+      /* ---- Place Order Button ---- */
+      .checkout-button {
+        width: 100%;
+        padding: 16px 24px;
+        margin-top: 20px;
+        background: linear-gradient(135deg, #ff6b4a 0%, #ff8a5c 100%);
+        color: #fff;
+        font-size: 1.7rem;
+        font-weight: 700;
+        font-family: "Montserrat", sans-serif;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 6px 25px rgba(255, 107, 74, 0.3);
+        letter-spacing: 0.5px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .checkout-button::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.12) 0%,
+          transparent 50%
+        );
+        pointer-events: none;
+      }
+
+      .checkout-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 35px rgba(255, 107, 74, 0.4);
+        background: linear-gradient(135deg, #ff7a56 0%, #ff9870 100%);
+      }
+
+      .checkout-button:active {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 16px rgba(255, 107, 74, 0.25);
+      }
+
+      .checkout-button:focus {
+        outline: 3px solid rgba(255, 107, 74, 0.3);
+        outline-offset: 2px;
+      }
+
+      /* ---- Empty cart state ---- */
+      .empty-cart-message {
+        text-align: center;
+        padding: 80px 20px;
+      }
+
+      .empty-cart-message h2 {
+        color: #bcc8d6;
+        font-size: 2rem;
+        margin-bottom: 16px;
+        border: none;
+      }
+
+      .empty-cart-message h2::before {
+        display: none;
+      }
+
+      .empty-cart-message p {
+        font-size: 1.5rem;
+      }
+
+      .empty-cart-message a {
+        color: #7ab8ff;
+        font-weight: 600;
+        transition: color 0.2s;
+      }
+
+      .empty-cart-message a:hover {
+        color: #a0d0ff;
+        text-decoration: underline;
+      }
+
+      /* ---- Page Load Animation ---- */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .checkout-section {
+        animation: fadeInUp 0.5s ease forwards;
+      }
+
+      .checkout-section:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+
+      .order-summary-card {
+        animation: fadeInUp 0.5s ease 0.15s forwards;
+        opacity: 0;
+      }
+
+      /* ---- Mobile Responsive for Checkout ---- */
+      @media (max-width: 768px) {
+        .checkout-main {
+          padding: 10px 0 40px;
+        }
+
+        .checkout-container {
+          gap: 20px;
+        }
+
+        .checkout-section {
+          padding: 20px;
+        }
+
+        .checkout-section h2 {
+          font-size: 1.7rem;
+        }
+
+        .order-summary-card {
+          padding: 18px 20px;
+        }
+
+        .checkout-button {
+          font-size: 1.5rem;
+          padding: 14px 20px;
+        }
+
+        .payment-option {
+          padding: 12px 14px;
+        }
+
+        .summary-row.total span:last-child {
+          font-size: 1.7rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .checkout-section {
+          padding: 16px;
+          border-radius: 10px;
+        }
+
+        .checkout-section input,
+        .checkout-section textarea {
+          padding: 10px 12px;
+          font-size: 1.4rem;
+        }
+
+        .back-link {
+          font-size: 1.3rem;
+          padding: 6px 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <header class="header fixed">
+        <div class="main-content">
+          <div class="body">
+            <!-- logo -->
+            <img src="../static/bg/logoweb.jpg.webp" alt="" class="logo" />
+            <div class="logo-text">
+              NATIONAL<br />
+              CINEMA<br />
+              CENTER
+            </div>
+
+            <!-- nav -->
+            <nav class="nav">
+              <ul class="nav-menu">
+                <li>
+                  <a href="{{ url_for('menu.homepage') }}">Trang Chủ</a>
+                </li>
+                <li><a href="{{ url_for('menu.showtime') }}">Lịch Chiếu</a></li>
+                <li><a href="{{ url_for('menu.intro') }}">Giới Thiệu</a></li>
+              </ul>
+            </nav>
+            <!-- btn actions -->
+            <div class="action">
+              <a href="{{ url_for('login.login_user') }}" class="btn btn2"
+                >Đăng Nhập</a
+              >
+              <a href="{{ url_for('signup.sign_up') }}" class="btn btn1"
+                >Đăng Kí</a
+              >
+            </div>
+          </div>
+        </div>
+      </header>
+    </header>
+
+    <section class="checkout-main">
+      <div class="checkout-container">
+        <!-- Cột trái: Form thông tin khách hàng & Phương thức thanh toán -->
+        <div>
+          <!-- Link quay lại cửa hàng -->
+          <a href="./shop.html" class="back-link">← Quay lại cửa hàng</a>
+
+          <!-- ============= SECTION 1: THÔNG TIN KHÁCH HÀNG ============= -->
+          <!-- Form này sẽ lấy dữ liệu như: Tên, Email, SĐT, Địa chỉ -->
+          <div class="checkout-section">
+            <h2>Thông Tin Khách Hàng</h2>
+            <!-- Họ và Tên -->
+            <label>Họ và Tên *</label>
+            <input
+              type="text"
+              id="customerName"
+              placeholder="Nhập họ tên..."
+              required
+            />
+
+            <!-- Email (để gửi xác nhận đơn hàng) -->
+            <label>Email *</label>
+            <input
+              type="email"
+              id="customerEmail"
+              placeholder="Nhập email..."
+              required
+            />
+
+            <!-- Số Điện Thoại (để liên lạc về giao hàng) -->
+            <label>Số Điện Thoại *</label>
+            <input
+              type="tel"
+              id="customerPhone"
+              placeholder="Nhập số điện thoại..."
+              required
+            />
+
+            <!-- Địa Chỉ Giao Hàng (bắt buộc) -->
+            <label>Địa Chỉ *</label>
+            <textarea
+              id="customerAddress"
+              placeholder="Nhập địa chỉ giao hàng..."
+              rows="3"
+              required
+            ></textarea>
+
+            <!-- Ghi Chú (tuỳ chọn) -->
+            <label>Ghi Chú Đơn Hàng</label>
+            <textarea
+              id="orderNote"
+              placeholder="Ghi chú thêm (tuỳ chọn)..."
+              rows="2"
+            ></textarea>
+          </div>
+
+          <!-- ============= SECTION 2: PHƯƠNG THỨC THANH TOÁN ============= -->
+          <!-- Khách có 3 lựa chọn: COD, Chuyển khoản, hay Thẻ tín dụng -->
+          <div class="checkout-section">
+            <h2>Phương Thức Thanh Toán</h2>
+            <div class="payment-method">
+              <!-- Lựa chọn 1: COD (Thanh toán khi nhận hàng) -->
+              <label class="payment-option">
+                <input type="radio" name="paymentMethod" value="cod" checked />
+                <span>💵 Thanh Toán Khi Nhận (COD)</span>
+              </label>
+              <!-- Lựa chọn 2: Chuyển khoản ngân hàng -->
+              <label class="payment-option">
+                <input type="radio" name="paymentMethod" value="bank" />
+                <span>🏦 Chuyển Khoản Ngân Hàng</span>
+              </label>
+              <!-- Lựa chọn 3: Thẻ tín dụng / ghi nợ -->
+              <label class="payment-option">
+                <input type="radio" name="paymentMethod" value="card" />
+                <span>💳 Thẻ Tín Dụng / Ghi Nợ</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cột phải: Tóm tắt đơn hàng & Nút Đặt Hàng -->
+        <div>
+          <!-- ============= SECTION 3: TÓM TẮT ĐƠN HÀNG ============= -->
+          <!-- Hiển thị chi tiết sản phẩm + tính toán tiền -->
+          <div class="checkout-section">
+            <h2>Tóm Tắt Đơn Hàng</h2>
+            <!-- Danh sách sản phẩm sẽ được hiển thị tại đây (do products.js điền) -->
+            <div class="cart-items-review" id="orderItemsReview">
+              <!-- Nội dung: Tên sản phẩm x Số lượng | Giá -->
+            </div>
+            <!-- Bảng tính tiền: Subtotal + Phí giao + Tổng -->
+            <div class="order-summary">
+              <div class="summary-row">
+                <span>Subtotal:</span>
+                <span id="subtotalAmount">0 đ</span>
+              </div>
+              <div class="summary-row">
+                <span>Phí Giao Hàng:</span>
+                <span id="shippingAmount">0 đ</span>
+              </div>
+              <!-- Dòng TỔNG CỘNG - in đậm, màu đỏ -->
+              <div class="summary-row total">
+                <span>Tổng Cộng:</span>
+                <span id="totalAmount">0 đ</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Nút "Đặt Hàng" - Kích hoạt sự kiện lưu đơn hàng -->
+          <button class="checkout-button" id="placeOrderBtn">Đặt Hàng</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="last-page">
+      <div class="box-footer">
+        <div class="menu-last-page">
+          <ul>
+            <li><a href="#">Chính Sách</a></li>
+            <li><a href="#">Lịch Chiếu</a></li>
+            <li><a href="#">Tin Tức</a></li>
+            <li><a href="#">Giá Vé</a></li>
+            <li><a href="#">Hỏi Đáp</a></li>
+            <li><a href="#">Đặt Vé Nhóm,Tập Thể</a></li>
+            <li><a href="#">Liên Hệ</a></li>
+          </ul>
+        </div>
+        <div class="social-link">
+          <ul>
+            <li>
+              <a
+                href="https://www.facebook.com/chieuphimquocgiavn/"
+                target="_blank"
+                class="fb-tab"
+                ><img
+                  src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg"
+                  alt="FB"
+              /></a>
+            </li>
+            <li>
+              <a href="https://oa.zalo.me/ttcpqg" target="_blank" class="zl-tab"
+                ><img
+                  src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg"
+                  alt="Zalo"
+              /></a>
+            </li>
+            <li>
+              <a
+                href="https://www.youtube.com/@TrungtamChieuphimQuocgiaNCC"
+                target="_blank"
+                class="yt-tab"
+                ><img
+                  src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg"
+                  alt="YT"
+              /></a>
+            </li>
+          </ul>
+        </div>
+        <div class="owner-centre">
+          <ul>
+            <li>
+              <p>Cơ quan chủ quản: BỘ VĂN HÓA, THỂ THAO VÀ DU LỊCH</p>
+            </li>
+            <li>
+              <p>Bản quyền thuộc Trung tâm Chiếu phim Quốc gia.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // ============= FUNCTION: Hiển thị chi tiết đơn hàng =============
+      // Khi trang load, hàm này sẽ:
+      // 1. Lấy giỏ hàng từ localStorage
+      // 2. Kiểm tra giỏ có trống không - nếu trống hiển thị thông báo
+      // 3. Nếu có sản phẩm, hiển thị danh sách + tính toán tiền
+      function populateCheckout() {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const productsData = JSON.parse(localStorage.getItem("products")) || [];
+
+        // Nếu giỏ hàng trống
+        if (!cart || cart.length === 0) {
+          document.querySelector(".checkout-main").innerHTML =
+            '<div class="empty-cart-message"><h2>Giỏ hàng của bạn đang trống</h2><p><a href="./shop.html" style="color:#007bff;">Quay lại cửa hàng</a></p></div>';
+          return;
+        }
+
+        // Hiển thị danh sách sản phẩm trong đơn hàng
+        // Mỗi item sẽ hiển thị: Tên x Số lượng | Subtotal
+        const reviewHTML = cart
+          .map((item) => {
+            const subtotal = item.price * item.quantity; // Tiền = Giá x Số lượng
+            return `<div class="cart-item-review">
+              <span>${item.name} x${item.quantity}</span>
+              <span>${subtotal.toLocaleString()} đ</span>
+            </div>`;
+          })
+          .join("");
+
+        document.getElementById("orderItemsReview").innerHTML = reviewHTML;
+
+        // Tính toán tổng tiền
+        const subtotal = cart.reduce(
+          (sum, item) => sum + item.price * item.quantity,
+          0,
+        );
+        // Phí giao hàng cố định 30,000 đ (có thể điều chỉnh theo điều kiện)
+        const shipping = subtotal > 0 ? 30000 : 0;
+        const total = subtotal + shipping;
+
+        // Cập nhật các trường hiển thị tiền
+        document.getElementById("subtotalAmount").textContent =
+          subtotal.toLocaleString() + " đ";
+        document.getElementById("shippingAmount").textContent =
+          shipping.toLocaleString() + " đ";
+        document.getElementById("totalAmount").textContent =
+          total.toLocaleString() + " đ";
+      }
+
+      // ============= EVENT: Khi bấm nút "Đặt Hàng" =============
+      // Hàm này sẽ:
+      // 1. Kiểm tra xem khách hàng đã điền đầy đủ thông tin không
+      // 2. Lấy dữ liệu form + giỏ hàng + tính toán tiền
+      // 3. Lưu đơn hàng vào localStorage (trong app thực sẽ gửi server)
+      // 4. Xóa giỏ hàng
+      // 5. Quay về trang cửa hàng
+      document
+        .getElementById("placeOrderBtn")
+        ?.addEventListener("click", function () {
+          // Lấy dữ liệu từ form
+          const name = document.getElementById("customerName").value.trim();
+          const email = document.getElementById("customerEmail").value.trim();
+          const phone = document.getElementById("customerPhone").value.trim();
+          const address = document
+            .getElementById("customerAddress")
+            .value.trim();
+          const paymentMethod = document.querySelector(
+            'input[name="paymentMethod"]:checked',
+          ).value;
+
+          // Kiểm tra xem tất cả thông tin bắt buộc đã được điền chưa
+          if (!name || !email || !phone || !address) {
+            alert("Vui lòng điền đầy đủ thông tin khách hàng!");
+            return;
+          }
+
+          // Kiểm tra giỏ hàng không được trống
+          const cart = JSON.parse(localStorage.getItem("cart")) || [];
+          if (!cart || cart.length === 0) {
+            alert("Giỏ hàng của bạn đang trống!");
+            return;
+          }
+
+          // Tạo object đơn hàng với tất cả thông tin
+          // Đặt id = thời gian hiện tại (unique)
+          const order = {
+            id: Date.now(),
+            customerName: name,
+            customerEmail: email,
+            customerPhone: phone,
+            customerAddress: address,
+            paymentMethod: paymentMethod,
+            cart: cart, // Danh sách sản phẩm
+            total: cart.reduce(
+              (sum, item) => sum + item.price * item.quantity,
+              0,
+            ),
+            createdAt: new Date().toISOString(), // Thời gian tạo đơn
+          };
+
+          // Lưu đơn hàng vào localStorage
+          // Trước đó lấy danh sách đơn hàng cũ (nếu có)
+          let orders = JSON.parse(localStorage.getItem("orders")) || [];
+          orders.push(order);
+          localStorage.setItem("orders", JSON.stringify(orders));
+
+          // Xóa giỏ hàng sau khi đặt hàng thành công
+          localStorage.setItem("cart", JSON.stringify([]));
+
+          // Thông báo thành công + hiển thị mã đơn
+          alert(
+            "Đơn hàng của bạn đã được tạo thành công! Đơn hàng #" + order.id,
+          );
+          // Quay lại trang cửa hàng
+          window.location.href = "./shop.html";
+        });
+
+      // ============= CHẠY NGAY KHI TRANG LOAD =============
+      // Gọi hàm populateCheckout để hiển thị giỏ hàng + tính tiền
+      document.addEventListener("DOMContentLoaded", populateCheckout);
+    </script>
+  </body>
+</html>
