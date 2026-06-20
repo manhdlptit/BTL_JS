@@ -13,7 +13,10 @@
 {%endblock%} {%block content%}
 <div class="surround_film">
   {%for movie in movies%}
-  <div class="inf_film">
+  <div
+    class="inf_film"
+    onclick="window.location.href='{{ url_for('menu.film_shln') }}' "
+  >
     <div class="left">
       <a href="{{ url_for('menu.film_shln') }}"
         ><img src="{{ url_for('static', filename=movie.img_url) }}" alt=""

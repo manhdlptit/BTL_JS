@@ -20,7 +20,7 @@ def login_user():
         if find_username is None:
             return jsonify({"error": "not find username"}),404   
         if not check_password_hash(find_username.password, password):
-            return jsonify({"error": "password different check password"}),400    
+            return jsonify({"error": "wrong password"}),400    
 
         return redirect(url_for("menu.homepage"))
     if request.method == "GET":
