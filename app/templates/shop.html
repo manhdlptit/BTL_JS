@@ -1,0 +1,706 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="../static/bg/favicon/ico/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="../static/bg/favicon/ico/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="../static/bg/favicon/ico/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="../static/bg/favicon/ico/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="../static/bg/favicon/ico/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="../static/bg/favicon/ico/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="../static/bg/favicon/ico/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="../static/bg/favicon/ico/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../static/bg/favicon/ico/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="../static/bg/favicon/ico/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../static/bg/favicon/ico/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="../static/bg/favicon/ico/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../static/bg/favicon/ico/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../static/bg/favicon/ico/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="stylesheet" href="./reset.css" />
+    <!-- embed font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../static/css/styleshop.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <title>Rạp Chiếu Phim Quốc Gia</title>
+    <!-- ============= ENHANCED SHOP STYLES ============= -->
+    <style>
+      /* ---- Shop Navigation (Category Buttons + Search) ---- */
+      .nav-shop {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px 40px;
+        flex-wrap: wrap;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.02) 0%,
+          transparent 100%
+        );
+        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      }
+
+      .nav-shop ul {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 0;
+        margin: 0;
+        flex-wrap: wrap;
+      }
+
+      .shop-btn {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        color: #bcc8d6;
+        font-size: 1.4rem;
+        font-weight: 600;
+        font-family: "Montserrat", sans-serif;
+        padding: 10px 20px;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        letter-spacing: 0.3px;
+        white-space: nowrap;
+      }
+
+      .shop-btn:hover {
+        background: rgba(255, 255, 255, 0.06);
+        border-color: rgba(255, 107, 74, 0.3);
+        color: #e6eef6;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      .shop-btn.active {
+        background: linear-gradient(135deg, #ff6b4a 0%, #ff8a5c 100%);
+        border-color: transparent;
+        color: #fff;
+        box-shadow: 0 4px 15px rgba(255, 107, 74, 0.3);
+      }
+
+      .shop-btn.active:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(255, 107, 74, 0.4);
+      }
+
+      /* ---- Search Container ---- */
+      .search-container {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        border: 1.5px solid rgba(255, 255, 255, 0.08);
+        border-radius: 25px;
+        padding: 4px 6px 4px 16px;
+        width: 240px;
+        height: 42px;
+        background: rgba(255, 255, 255, 0.02);
+        transition: all 0.3s ease;
+        margin: 0;
+      }
+
+      .search-container:focus-within {
+        border-color: rgba(255, 107, 74, 0.4);
+        background: rgba(255, 255, 255, 0.04);
+        box-shadow: 0 0 0 3px rgba(255, 107, 74, 0.06);
+      }
+
+      .search-container input {
+        border: none;
+        outline: none;
+        padding: 0;
+        font-size: 1.4rem;
+        width: 100%;
+        background: transparent;
+        color: #e6eef6;
+        font-family: "Montserrat", sans-serif;
+      }
+
+      .search-container input::placeholder {
+        color: rgba(230, 238, 246, 0.35);
+        font-size: 1.3rem;
+      }
+
+      .search-container button {
+        border: none;
+        outline: none;
+        background: transparent;
+        cursor: pointer;
+        font-size: 1.6rem;
+        color: #bcc8d6;
+        padding: 6px 10px;
+        border-radius: 50%;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .search-container button:hover {
+        color: #ff6b4a;
+        background: rgba(255, 107, 74, 0.1);
+      }
+
+            /* ---- Product Grid & Groups ---- */
+      .content-shopmode {
+        max-width: 1200px;
+        margin: 2rem auto 4rem;
+        padding: 1rem 2rem;
+      }
+
+      .shop-content {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      .star-group {
+        margin-bottom: 30px;
+      }
+
+      .star-group-title {
+        color: #ff6b4a;
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        padding-left: 10px;
+        border-left: 4px solid #ff6b4a;
+      }
+
+      .star-group-horizontal {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      /* ---- Product Cards ---- */
+      .product-card {
+        background: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.03) 0%,
+          rgba(255, 255, 255, 0.01) 100%
+        );
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 16px;
+        padding: 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: all 0.35s ease;
+        overflow: hidden;
+        height: auto;
+        width: 250px; /* Cố định chiều rộng để dàn hàng ngang tốt hơn */
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        position: relative;
+      }
+
+      .product-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #ff6b4a, #ffb347);
+        opacity: 0;
+        transition: opacity 0.35s ease;
+      }
+
+      .product-card:hover::before {
+        opacity: 1;
+      }
+
+      .product-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        border-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .product-card img {
+        width: 100%;
+        height: 200px;
+        border-radius: 10px;
+        object-fit: cover;
+        margin-bottom: 12px;
+        transition: transform 0.4s ease;
+      }
+
+      .product-card:hover img {
+        transform: scale(1.03);
+      }
+
+      .product-card h3 {
+        color: #f0f6ff;
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin: 8px 0 4px;
+        line-height: 1.3;
+      }
+
+      .product-card .price {
+        font-size: 1.8rem;
+        font-weight: 800;
+        background: linear-gradient(90deg, #ff6b4a, #ffb347);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        margin: 6px 0 10px;
+      }
+
+      .product-card .add-to-cart-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 10px 16px;
+        font-size: 1.4rem;
+        border-radius: 10px;
+        margin-top: auto;
+      }
+
+      /* ---- Cart Modal Enhancements ---- */
+      .cart-modal {
+        border-radius: 14px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        background: linear-gradient(
+          180deg,
+          rgba(20, 28, 40, 0.98) 0%,
+          rgba(15, 20, 30, 0.98) 100%
+        );
+        backdrop-filter: blur(20px);
+      }
+
+      .cart-modal .cart-modal-content h3 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #f0f6ff;
+      }
+
+      #close-cart-btn {
+        color: #bcc8d6 !important;
+        font-size: 18px !important;
+        width: 30px;
+        height: 30px;
+        border-radius: 50% !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;
+      }
+
+      #close-cart-btn:hover {
+        background: rgba(255, 255, 255, 0.05) !important;
+        color: #fff !important;
+      }
+
+      .cart-modal .checkout-link {
+        border-radius: 10px;
+        padding: 12px;
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+        transition: all 0.3s ease;
+      }
+
+      .cart-modal .checkout-link:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(255, 107, 74, 0.3);
+      }
+
+      /* ---- Responsive ---- */
+      @media (max-width: 768px) {
+        .nav-shop {
+          padding: 16px 20px;
+          gap: 12px;
+        }
+
+        .shop-btn {
+          font-size: 1.2rem;
+          padding: 8px 14px;
+        }
+
+        .search-container {
+          width: 100%;
+          max-width: 300px;
+        }
+
+        .shop-content {
+          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+          gap: 16px;
+        }
+
+        .content-shopmode {
+          padding: 1rem;
+        }
+
+        .product-card {
+          padding: 14px;
+        }
+
+        .product-card img {
+          height: 160px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .nav-shop {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .nav-shop ul {
+          justify-content: center;
+        }
+
+        .shop-btn {
+          font-size: 1.1rem;
+          padding: 7px 12px;
+        }
+
+        .search-container {
+          max-width: 100%;
+        }
+
+        .shop-content {
+          grid-template-columns: 1fr 1fr;
+          gap: 12px;
+        }
+
+        .product-card {
+          padding: 10px;
+          border-radius: 12px;
+        }
+
+        .product-card img {
+          height: 130px;
+        }
+
+        .product-card h3 {
+          font-size: 1.3rem;
+        }
+
+        .product-card .price {
+          font-size: 1.5rem;
+        }
+
+        .product-card .add-to-cart-btn {
+          font-size: 1.2rem;
+          padding: 8px 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <header class="header fixed">
+        <div class="main-content">
+          <div class="body">
+            <!-- logo -->
+            <img src="../static/bg/logoweb.jpg.webp" alt="" class="logo" />
+            <div class="logo-text">
+              NATIONAL<br />
+              CINEMA<br />
+              CENTER
+            </div>
+
+            <!-- nav -->
+            <nav class="nav">
+              <ul class="nav-menu">
+                <li>
+                  <a href="{{ url_for('menu.homepage') }}" class="active"
+                    >Trang Chủ</a
+                  >
+                </li>
+                <li><a href="{{ url_for('menu.showtime') }}">Lịch Chiếu</a></li>
+                <li><a href="{{ url_for('menu.intro') }}">Giới Thiệu</a></li>
+                <li><a href="./shop.html">Shop</a></li>
+              </ul>
+            </nav>
+            <!-- btn actions -->
+                <!-- cart button -->
+                <div class="cart-button">
+                  <button id="open-cart-btn" class="btn">🛒 Giỏ hàng (<span id="cart-count">0</span>)</button>
+                </div>
+            <div class="action">
+              <a href="{{ url_for('login.login_user') }}" class="btn btn2"
+                >Đăng Nhập</a
+              >
+              <a href="{{ url_for('signup.sign_up') }}" class="btn btn1"
+                >Đăng Kí</a
+              >
+            </div>
+          </div>
+        </div>
+      </header>
+    </header>
+    <section class="shop">
+      <div class="nav-shop">
+        <ul>
+          <li><button onclick="showShopContent('star-shop', this)" id="shopbut-0" class="shop-btn active">Star Shop</button></li>
+          <li>
+            <button
+              onclick="showShopContent('movie-verse-shop', this)"
+              href="#"
+              id="shopbut-1"
+              class="shop-btn"
+            >
+              Movie-verse
+            </button>
+          </li>
+          <li>
+            <button
+              onclick="showShopContent('wibu-shop', this)"
+              href="#"
+              id="shopbut-2"
+              class="shop-btn"
+            >
+              Wibu
+            </button>
+          </li>
+          <li>
+            <button
+              onclick="showShopContent('inner-child-shop', this)"
+              href="#"
+              id="shopbut-3"
+              class="shop-btn"
+            >
+              Inner Child
+            </button>
+          </li>
+          <li>
+            <button
+              onclick="showShopContent('yolo-shop', this)"
+              href="#"
+              id="shopbut-4"
+              class="shop-btn"
+            >
+              Yolo
+            </button>
+          </li>
+        </ul>
+        <!-- tìm kiếm -->
+        <div class="search-container">
+          <input type="text" id="searchInput" placeholder="Tìm kiếm..." />
+          <button id="search-btn">🔍</button>
+        </div>
+      </div>
+      <div class="content-shopmode">
+        <div id="star-shop" class="page active">
+          <div class="shop-content" id="star-products"></div>
+        </div>
+        <div id="movie-verse-shop" class="page">
+          <div class="shop-content" id="movies-products"></div>
+        </div>
+        <div id="wibu-shop" class="page">
+          <div class="shop-content" id="wibu-products"></div>
+        </div>
+        <div id="inner-child-shop" class="page">
+          <div class="shop-content" id="inner-child-products"></div>
+        </div>
+        <div id="yolo-shop" class="page">
+          <div class="shop-content" id="yolo-products"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="last-page">
+      <div class="box-footer">
+        <div class="menu-last-page">
+          <ul>
+            <li><a href="#">Chính Sách</a></li>
+            <li><a href="#">Lịch Chiếu</a></li>
+            <li><a href="#">Tin Tức</a></li>
+            <li><a href="#">Giá Vé</a></li>
+            <li><a href="#">Hỏi Đáp</a></li>
+            <li><a href="#">Đặt Vé Nhóm,Tập Thể</a></li>
+            <li><a href="#">Liên Hệ</a></li>
+          </ul>
+        </div>
+        <div class="social-link">
+          <ul>
+            <li>
+              <a
+                href="https://www.facebook.com/chieuphimquocgiavn/"
+                target="_blank"
+                class="fb-tab"
+                ><img
+                  src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg"
+                  alt="FB"
+              /></a>
+            </li>
+            <li>
+              <a href="https://oa.zalo.me/ttcpqg" target="_blank" class="zl-tab"
+                ><img
+                  src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg"
+                  alt="Zalo"
+              /></a>
+            </li>
+            <li>
+              <a
+                href="https://www.youtube.com/@TrungtamChieuphimQuocgiaNCC"
+                target="_blank"
+                class="yt-tab"
+                ><img
+                  src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg"
+                  alt="YT"
+              /></a>
+            </li>
+            <li>
+              <a
+                href="https://play.google.com/store/apps/details?id=vn.com.chieuphimquocgia.app&hl=en_US"
+                target="_blank"
+                class="chplay-tab"
+                ><img
+                  src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                  alt="Google Play"
+              /></a>
+            </li>
+            <li>
+              <a
+                href="https://apps.apple.com/vn/app/chi%E1%BA%BFu-phim-qu%E1%BB%91c-gia-ncc/id6446946150"
+                target="_blank"
+                class="appstore-tab"
+                ><img
+                  src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
+                  alt="App Store"
+              /></a>
+            </li>
+            <li>
+              <a
+                href="http://online.gov.vn/Home/WebDetails/4519"
+                target="_blank"
+                class="bocongthuong-tab"
+                ><img
+                  src="../static/bg/logo-bct-ft.jpg"
+                  alt="Đã thông báo Bộ Công Thương"
+                  style="height: 45px"
+              /></a>
+            </li>
+          </ul>
+        </div>
+        <div class="owner-centre">
+          <ul>
+            <li>
+              <p>Cơ quan chủ quản: BỘ VĂN HÓA, THỂ THAO VÀ DU LỊCH</p>
+            </li>
+            <li>
+              <p>Bản quyền thuộc Trung tâm Chiếu phim Quốc gia.</p>
+            </li>
+            <li>
+              <p>
+                Giấy phép số: 224/GP- TTĐT ngày 31/8/2010 - Chịu trách nhiệm: Vũ
+                Đức Tùng - Giám đốc.
+              </p>
+            </li>
+            <li>
+              <p>
+                Địa chỉ: Số 87 Láng Hạ, Phường Ô Chợ Dừa, TP.Hà Nội - Điện
+                thoại: 024.35141791
+              </p>
+            </li>
+            <br /><br />
+            <li>
+              <p>
+                Copyright 2026. NCC All Rights Reservered. Dev by
+                TuanDatandDucManh.vn
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <!-- scripts -->
+    <!-- Cart modal (styles moved to thucode/style.css) -->
+    <div id="cart-modal" class="cart-modal" aria-hidden="true">
+      <div class="cart-modal-content">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+          <h3 style="margin:0;">Giỏ hàng</h3>
+          <button id="close-cart-btn" style="background:none;border:none;font-size:16px;cursor:pointer;">✕</button>
+        </div>
+        <div id="cart-container"></div>
+        <div style="margin-top:12px; font-weight:600;">Tổng: <span id="cart-total">0 đ</span></div>
+        <a href="./checkou.html" class="checkout-link">Thanh Toán</a>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById('open-cart-btn')?.addEventListener('click', function () {
+        const modal = document.getElementById('cart-modal');
+        if (modal) modal.style.display = 'block';
+      });
+      document.getElementById('close-cart-btn')?.addEventListener('click', function () {
+        const modal = document.getElementById('cart-modal');
+        if (modal) modal.style.display = 'none';
+      });
+    </script>
+     <script src="../static/js/product.js"></script>
+  </body>
+</html>
