@@ -22,15 +22,18 @@ body {
   transition: 0.2s ease;
 }
 
-.STANDARD {
+.STANDARD,
+#standard {
   background-color: #4d4141;
 }
 
-.VIP {
+.VIP,
+#vjp {
   background-color: #fb7601;
 }
 
-.seat button.NOT_AVAILABLE {
+.seat button.NOT_AVAILABLE,
+#not_avai {
   background-image: url("../bg/img/logoweb.jpg.webp");
   background-size: cover;
   cursor: not-allowed;
@@ -137,4 +140,26 @@ body {
   font-size: 2rem;
   cursor: pointer;
   color: black;
+}
+
+.describe_type_seat {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.per_seat div {
+  height: 2.5rem;
+  width: 2.5rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  transition: 0.2s ease;
+}
+.per_seat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
