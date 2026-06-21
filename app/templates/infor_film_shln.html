@@ -7,11 +7,13 @@
 <li><a href="{{ url_for('menu.homepage') }}">Trang Chủ</a></li>
 <li><a href="{{ url_for('menu.showtime') }}">Lịch Chiếu</a></li>
 <li><a href="{{ url_for('menu.intro') }}">Giới Thiệu</a></li>
+<li><a href="{{ url_for('menu.shop_item') }}">Vật phẩm mua kèm</a></li>
+
 {%endblock%} {%block content%}
 <div class="pic-bg-shln">
   <img
     class
-    src="../static/bg/songhulamnguy.jpg"
+    src="../static/bg/img/songhulamnguy.jpg"
     alt="Background Song Hỷ Lâm Nguy"
   />
 </div>
@@ -20,7 +22,7 @@
 </section>
 <section class="infor-shln">
   <div class="box-poster">
-    <img src="../static/bg/shln-poster-infor.img" alt="" class="poster" />
+    <img src="../static/bg/img/shln-poster-infor.img" alt="" class="poster" />
   </div>
   <div class="title-film">
     <div class="h2-title">
@@ -113,6 +115,7 @@
     </p>
   </div>
 </div>
+
 <script>
   //Gom tất cả các nút ngày chiếu vào một danh sách
   const dateButtons = document.querySelectorAll(".date-but");

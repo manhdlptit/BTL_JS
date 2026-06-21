@@ -89,17 +89,14 @@
     />
     {%block css%} {%endblock%}
     <title>Rạp Chiếu Phim Quốc Gia</title>
+    {%block stylecss%} {%endblock%}
   </head>
 
   <body>
     <header class="header fixed">
       <div class="main-content">
         <div class="body">
-          <img
-            src="../static/bg/logoweb.jpg.webp"
-            alt="Logo rạp"
-            class="logo"
-          />
+          <img src="../static/bg/img/logonew.jpg" alt="Logo rạp" class="logo" />
           <div class="logo-text">
             NATIONAL<br />
             CINEMA<br />
@@ -113,11 +110,11 @@
           </nav>
 
           <div class="action">
-            <a href="{{ url_for('login.login_user') }}" class="btn btn2"
+            <!-- <a href="{{ url_for('login.login_user') }}" class="btn btn2"
               >Đăng Nhập</a
-            >
-            <a href="{{ url_for('signup.sign_up') }}" class="btn btn1"
-              >Đăng Kí</a
+            > -->
+            <a href="{{ url_for('menu.logout') }}" class="btn btn1"
+              >Đăng Xuất</a
             >
           </div>
         </div>
@@ -192,7 +189,7 @@
                 target="_blank"
                 class="bocongthuong-tab"
                 ><img
-                  src="../static/bg/logo-bct-ft.jpg"
+                  src="../static/bg/img/logo-bct-ft.jpg"
                   alt="Đã thông báo Bộ Công Thương"
                   style="height: 45px"
               /></a>
@@ -222,8 +219,18 @@
             <br /><br />
             <li>
               <p>
-                Copyright 2026. NCC All Rights Reservered. Dev by
-                TuanDatandDucManh.vn
+                &copy; 2026. NCC All Rights Reserved. Developed by TuanDat &
+                DucManh
+              </p>
+            </li>
+            <br /><br />
+            <li>
+              <p style="font-size: 0.9em; color: #aaa">
+                * <strong>Disclaimer:</strong> Đây là dự án học tập (Bài tập
+                lớn). Toàn bộ giao diện, hình ảnh và dữ liệu phim được sử dụng
+                dựa trên nền tảng của trang web Rạp Chiếu Phim Quốc Gia nhằm mục
+                đích thực hành lập trình, không có giá trị thương mại hay đại
+                diện cho đơn vị chính thức.
               </p>
             </li>
           </ul>

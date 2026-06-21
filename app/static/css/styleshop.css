@@ -17,11 +17,19 @@ ul {
 }
 .logo {
   height: 50px;
-  padding: 10px 0px 10px 10px;
+  padding: 0px 0px 10px 10px;
 }
+/* Mạnh sửa đoạn này */
 .header .body {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
 }
+/* Mạnh sửa đoạn này */
+/* .header .body {
+  display: flex;
+} */
 .nav ul {
   display: flex;
 }
@@ -39,14 +47,16 @@ ul {
   background-color: #1a1d24;
   padding: 10px 40px;
 } */
+/* Mạnh sửa đoạn này */
 .nav {
   margin: auto;
-  padding: 10px 40px;
+  padding: 0px 40px;
 }
 .nav-menu {
-  padding: 10px 20px;
+  padding: 0px 20px;
   gap: 40px;
 }
+/* Mạnh sửa đoạn này  */
 .nav ul li a:hover {
   color: red;
 }
@@ -393,6 +403,13 @@ body {
   display: flex;
   align-items: center;
   margin-left: 1rem;
+  /* Mạnh đổi vị trí ô giỏ hàng */
+  /* ...... */
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  /* Mạnh đổi xong rồiii */
+  /* ....... */
 }
 .cart-button .btn {
   width: auto;

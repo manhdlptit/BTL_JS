@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="../static/css/reset.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -506,7 +506,7 @@
         <div class="main-content">
           <div class="body">
             <!-- logo -->
-            <img src="../static/bg/logoweb.jpg.webp" alt="" class="logo" />
+            <img src="../static/bg/img/logoweb.jpg.webp" alt="" class="logo" />
             <div class="logo-text">
               NATIONAL<br />
               CINEMA<br />
@@ -525,11 +525,14 @@
             </nav>
             <!-- btn actions -->
             <div class="action">
-              <a href="{{ url_for('login.login_user') }}" class="btn btn2"
+              <!-- <a href="{{ url_for('login.login_user') }}" class="btn btn2"
                 >Đăng Nhập</a
               >
               <a href="{{ url_for('signup.sign_up') }}" class="btn btn1"
                 >Đăng Kí</a
+              > -->
+              <a href="{{ url_for('menu.logout') }}" class="btn btn1"
+                >Đăng Xuất</a
               >
             </div>
           </div>
@@ -542,7 +545,9 @@
         <!-- Cột trái: Form thông tin khách hàng & Phương thức thanh toán -->
         <div>
           <!-- Link quay lại cửa hàng -->
-          <a href="./shop.html" class="back-link">← Quay lại cửa hàng</a>
+          <a href="{{ url_for('menu.shop_item') }}" class="back-link"
+            >← Quay lại cửa hàng</a
+          >
 
           <!-- ============= SECTION 1: THÔNG TIN KHÁCH HÀNG ============= -->
           <!-- Form này sẽ lấy dữ liệu như: Tên, Email, SĐT, Địa chỉ -->
@@ -721,7 +726,7 @@
         // Nếu giỏ hàng trống
         if (!cart || cart.length === 0) {
           document.querySelector(".checkout-main").innerHTML =
-            '<div class="empty-cart-message"><h2>Giỏ hàng của bạn đang trống</h2><p><a href="./shop.html" style="color:#007bff;">Quay lại cửa hàng</a></p></div>';
+            '<div class="empty-cart-message"><h2>Giỏ hàng của bạn đang trống</h2><p><a href="{{ url_for('menu.shop_item') }}" style="color:#007bff;">Quay lại cửa hàng</a></p></div>';
           return;
         }
 

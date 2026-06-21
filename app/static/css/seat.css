@@ -1,0 +1,142 @@
+body {
+  background-color: #090000;
+  color: #fff;
+}
+.sur_seat {
+  width: max-content;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 5px;
+  padding: 20px;
+}
+
+.seat button {
+  height: 2.5rem;
+  width: 2.5rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  transition: 0.2s ease;
+}
+
+.STANDARD {
+  background-color: #4d4141;
+}
+
+.VIP {
+  background-color: #fb7601;
+}
+
+.seat button.NOT_AVAILABLE {
+  background-image: url("../bg/z.webp");
+  background-size: cover;
+  cursor: not-allowed;
+}
+
+.seat button.selected {
+  border-color: #2144b8;
+  background-color: #2144b8;
+}
+
+.summary_container {
+  text-align: center;
+  margin: 2rem;
+  font-size: 1.1rem;
+}
+
+.action_buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 1.5rem;
+}
+
+.action_buttons button {
+  padding: 12px 28px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  border: none;
+}
+
+#btn_back {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #4d4141;
+}
+#btn_back:hover {
+  background: #4d4141;
+}
+
+#btn_cancel {
+  background: linear-gradient(#d32f2f, #f44336);
+  color: #ffffff;
+}
+
+#go_to_payment {
+  background: linear-gradient(#d32f2f, #f44336);
+  color: #ffffff;
+}
+
+#buy {
+  background: linear-gradient(#d32f2f, #f44336);
+  color: #ffffff;
+  padding: 12px 28px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  border: none;
+  margin-top: 15px;
+}
+
+.action_buttons button:disabled {
+  background: #221c1c !important;
+  color: #665e5e !important;
+  cursor: not-allowed !important;
+}
+
+#close_outside {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 99;
+}
+
+#open_payment_window {
+  display: none;
+  background-color: #fff;
+  border-radius: 2%;
+  height: auto;
+  min-height: 50vh;
+  width: 30%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  text-align: center;
+  padding: 50px;
+}
+
+#open_payment_window img {
+  width: 100%;
+}
+
+#close_with_x {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: black;
+}

@@ -1,6 +1,6 @@
 from dotenv import load_dotenv
 load_dotenv()
-from flask import Blueprint, request, redirect, url_for, render_template, jsonify
+from flask import Blueprint, request, redirect, url_for, render_template, jsonify,session
 from werkzeug.security import check_password_hash
 from app.blueprints.model import User, db
 from app.blueprints.menu import menu
@@ -22,7 +22,24 @@ def login_user():
         if not check_password_hash(find_username.password, password):
             return jsonify({"error": "wrong password"}),400    
 
-        return redirect(url_for("menu.homepage"))
+        infor_user = {
+            "username" : find_username.username,
+            "email" : find_username.email,
+            "role" : find_username.role
+            }  
+        
+        if find_username.role == "admin":
+            session['logged_in'] = True
+            session['role'] = infor_user["role"]
+            return redirect(url_for("admin.add_film"))
+        
+        if find_username.role == "client":
+            session['logged_in'] = True
+            session['id_user'] = find_username.id_user
+            session['username'] = infor_user["username"]
+            session['email'] = infor_user["email"]
+            return redirect(url_for("menu.homepage"))
+
     if request.method == "GET":
         return render_template("login.html")
 

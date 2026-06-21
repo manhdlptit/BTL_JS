@@ -4,5 +4,10 @@ function openTab(name) {
   for (i = 0; i < x.length; i++) {
     x[i].style.display = "none";
   }
+  let buttons = document.querySelectorAll(".button_click_tabbar button");
+  buttons.forEach(function (btn) {
+    btn.classList.remove("active");
+  });
   document.getElementById(name).style.display = "block";
+  event.currentTarget.classList.add("active");
 }

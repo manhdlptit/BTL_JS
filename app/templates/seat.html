@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/reset.css" />
+    <link rel="stylesheet" href="../static/css/seat.css" />
+    <title>Chọn Ghế</title>
+  </head>
+  <body>
+    <div class="sur_seat">
+      {% for seat in seats %}
+      <div class="seat">
+        <button
+          class="{{ seat.seat_type }} {{ seat.status }}"
+          data-name="{{ seat.name_seat }}"
+          data-price="{{ seat.price_seat }}"
+          data-status="{{ seat.status }}"
+        >
+          {{ seat.name_seat }}
+        </button>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="summary_container">
+      <p id="station">Ghế bạn đã chọn là: <strong>Chưa chọn</strong></p>
+      <p id="price">Tổng tiền: <strong>0 ₫</strong></p>
+      <div class="action_buttons">
+        <button type="button" id="btn_back">Quay lại</button>
+        <button type="button" id="btn_cancel" disabled>Hủy</button>
+        <button type="button" id="go_to_payment" disabled>
+          Tiến hành thanh toán
+        </button>
+      </div>
+    </div>
+
+    <div id="close_outside"></div>
+    <div id="open_payment_window">
+      <span id="close_with_x">&times;</span>
+      <h2>Mã QR Thanh Toán</h2>
+      <div id="qr-container">
+        <img id="qr-bank" src="" alt="Mã QR Thanh Toán" />
+      </div>
+      <button type="submit" id="buy">Xác nhận thanh toán</button>
+    </div>
+    <div
+      id="bill"
+      data-username="{{ inf_user.username }}"
+      data-email="{{ inf_user.email }}"
+      style="display: none"
+    ></div>
+
+    <script src="{{ url_for('static', filename='js/seat.js') }}"></script>
+    <script></script>
+  </body>
+</html>

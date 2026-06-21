@@ -32,7 +32,7 @@ def sign_up():
         if password != check_password:
             return jsonify({"error": "password different check password"}),400     
         gen_password = generate_password_hash(password)
-        new_user = User(email=email,username=username, password=gen_password)
+        new_user = User(email=email,username=username, password=gen_password, status="activate", role="client")
         db.session.add(new_user)
         db.session.commit()
 

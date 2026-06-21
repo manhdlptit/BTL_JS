@@ -20,7 +20,7 @@ def create_app():
     app.register_blueprint(signup)
     app.register_blueprint(login)
     app.register_blueprint(menu)
-    app.register_blueprint(admin)
+    app.register_blueprint(admin, url_prefix="/admin")
 
     with app.app_context():
         db.create_all()
