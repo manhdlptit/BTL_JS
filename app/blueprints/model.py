@@ -85,8 +85,9 @@ class Showtimes(db.Model):
     showtime = db.Column(db.String(7))
     id_movie = db.Column(db.Integer, db.ForeignKey('movies.id_movie'), nullable=False)
 
-    def __init__(self, showtime):
+    def __init__(self, showtime, id_movie):
         self.showtime = showtime
+        self.id_movie = id_movie
 
 
 

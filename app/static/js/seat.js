@@ -139,5 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <p style="font-style: italic; font-size: 12px; color: green;">Trạng thái: Thanh toán thành công</p>
       </div>
     `;
+    const list_seats_user_buy = document.getElementById("list_seat_user_buy");
+    list_seats_user_buy.value = list_seats;
   });
 });

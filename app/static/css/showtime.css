@@ -70,3 +70,6 @@ h4 {
 }
 
 /* seat */
+#z_index {
+  z-index: 99;
+}

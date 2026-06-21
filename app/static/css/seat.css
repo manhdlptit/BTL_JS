@@ -31,7 +31,7 @@ body {
 }
 
 .seat button.NOT_AVAILABLE {
-  background-image: url("../bg/z.webp");
+  background-image: url("../bg/img/logoweb.jpg.webp");
   background-size: cover;
   cursor: not-allowed;
 }
@@ -120,9 +120,7 @@ body {
   min-height: 50vh;
   width: 30%;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(90%, -78%);
   z-index: 100;
   text-align: center;
   padding: 50px;

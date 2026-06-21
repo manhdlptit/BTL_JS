@@ -20,7 +20,7 @@
     onclick="window.location.href='{{ url_for('menu.film_shln') }}' "
   >
     <div class="left">
-      <a href="{{ url_for('menu.film_shln') }}"
+      <a
         ><img src="{{ url_for('static', filename=movie.img_url) }}" alt=""
       /></a>
     </div>
@@ -38,10 +38,28 @@
       </p>
       <h4>Lịch chiếu</h4>
       <div class="btn_showtime">
-        <button>{{movie.showtime}}</button>
+        {% if movie.showtimes %} {% for slot in movie.showtimes %}
+        <button
+          class="btn_slot"
+          data-url="{{ url_for('menu.seat', id_show_time=slot.id_show_time) }}"
+        >
+          {{ slot.showtime }}
+        </button>
+        {% endfor %} {% else %}
+        <p
+          class="white"
+          style="font-size: 1rem; font-style: italic; color: brown"
+        >
+          Chưa có suất chiếu
+        </p>
+        {% endif %}
       </div>
     </div>
   </div>
   {%endfor%}
 </div>
-{%endblock%}
+
+{%endblock%} {% block script %}
+<script src="{{ url_for('static', filename='js/showtime.js') }}"></script>
+
+{% endblock %}
