@@ -17,13 +17,13 @@ def add_film():
         img_url = request.form.get("img_url")
 
         if not title or not duration or not origin or not date or not age or not genre:
-            return jsonify({"error": "Không được để trống thông tin bắt buộc"}), 400
+            return "Không được để trống thông tin bắt buộc"
         
         new_film = Movies(title=title, duration=duration, origin=origin, date=date, age=age, genre=genre, img_url=img_url)
         db.session.add(new_film)
         db.session.commit()
 
-        return jsonify({"successfully": "Thêm phim thành công"}), 201
+        return "Thêm phim thành công"
 
     if request.method == "GET":
         if not session.get('logged_in'):
@@ -38,11 +38,11 @@ def delete_film_with_id():
     if request.method == "POST":
         id = request.form.get("id_film")
         if not id:
-            return jsonify({"error": "Phải nhập vào ID phim"}), 400
+            return "Phải nhập vào ID phim"
             
         found_id = Movies.query.get(id)
         if not found_id:
-            return jsonify({"error": "Không tìm thấy bộ phim có ID này"}), 404
+            return "Không tìm thấy bộ phim có ID này"
             
         db.session.delete(found_id)
         db.session.commit()

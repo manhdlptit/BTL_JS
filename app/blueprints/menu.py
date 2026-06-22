@@ -54,6 +54,8 @@ def seat():
             row = seat[0]
             number = int(seat[1:])
             query_seat = Seats.query.filter_by(row=row, number=number).first()
+            if query_seat.status == "NOT_AVAILABLE":
+                return "Ghe da duoc dat truoc roi"
             if query_seat:
                 query_seat.status = "NOT_AVAILABLE"
             list_seat_user_buy_not_space.append(seat)
