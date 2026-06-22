@@ -413,13 +413,13 @@ function searchProducts(query) {
 document.addEventListener("DOMContentLoaded", function () {
   initProducts();
   initCart();
-  console.log("products.js loaded, products count=", getProducts().length);
+  // console.log("products.js loaded, products count=", getProducts().length);
   renderStarShop("star-products");
   renderProductsByCategory("movies-products", "movie-verse");
   renderProductsByCategory("wibu-products", "wibu");
   renderProductsByCategory("inner-child-products", "inner-child");
   renderProductsByCategory("yolo-products", "yolo");
-  // Render cart UI (if container exists) and update count/total
+  // Hiển thị và update count/total
   renderCart("cart-container");
   updateCartCountUI();
 

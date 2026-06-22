@@ -16,50 +16,27 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <title>Thanh Toán - National Cinema Center</title>
-    <!-- ============= CSS STYLING ============= -->
-    <style>
-      /* ===============================================================
-          === ENHANCED CHECKOUT STYLES (improved UI/UX) ===
-          =============================================================== */
 
-      /* Main checkout section - more breathing room */
+    <style>
       .checkout-main {
         padding: 20px 0 60px;
         min-height: 60vh;
       }
 
-      /* Container layout refinement */
       .checkout-container {
         gap: 32px;
       }
 
-      /* ---- Checkout Section Cards ---- */
       .checkout-section {
         padding: 28px 30px;
         margin-bottom: 24px;
-        background: linear-gradient(
-          145deg,
-          rgba(40, 50, 70, 0.6) 0%,
-          rgba(25, 35, 50, 0.5) 100%
-        );
+
         border: 1px solid rgba(100, 150, 255, 0.15);
         border-radius: 14px;
-        box-shadow:
-          0 8px 32px rgba(0, 0, 0, 0.3),
-          inset 0 1px 0 rgba(255, 255, 255, 0.04);
-        transition: all 0.3s ease;
       }
 
       .checkout-section:hover {
         border-color: rgba(255, 107, 74, 0.25);
-        box-shadow:
-          0 12px 40px rgba(0, 0, 0, 0.4),
-          inset 0 1px 0 rgba(255, 255, 255, 0.06);
-        background: linear-gradient(
-          145deg,
-          rgba(50, 60, 85, 0.6) 0%,
-          rgba(30, 42, 60, 0.5) 100%
-        );
       }
 
       /* Section headings */
@@ -77,17 +54,6 @@
         text-shadow: 0 0 20px rgba(255, 107, 74, 0.1);
       }
 
-      .checkout-section h2::before {
-        content: "";
-        display: inline-block;
-        width: 4px;
-        height: 20px;
-        background: linear-gradient(180deg, #ff6b4a, #ffb347);
-        border-radius: 4px;
-        box-shadow: 0 0 8px rgba(255, 107, 74, 0.4);
-      }
-
-      /* ---- Form Labels ---- */
       .checkout-section label {
         display: block;
         color: #c8d6e8;
@@ -103,7 +69,6 @@
         margin-top: 0;
       }
 
-      /* ---- Form Inputs ---- */
       .checkout-section input,
       .checkout-section select,
       .checkout-section textarea {
@@ -116,8 +81,6 @@
         font-size: 1.5rem;
         font-family: "Montserrat", sans-serif;
         transition: all 0.25s ease;
-        outline: none;
-        box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.3);
       }
 
       .checkout-section input:hover,
@@ -131,19 +94,13 @@
       .checkout-section textarea:focus {
         border-color: #ff6b4a;
         background: rgba(255, 107, 74, 0.06);
-        box-shadow:
-          0 0 0 3px rgba(255, 107, 74, 0.12),
-          0 0 20px rgba(255, 107, 74, 0.05),
-          inset 0 2px 6px rgba(0, 0, 0, 0.3);
       }
 
       .checkout-section textarea {
-        resize: vertical;
         min-height: 70px;
         line-height: 1.5;
       }
 
-      /* Placeholder styling */
       .checkout-section input::placeholder,
       .checkout-section textarea::placeholder {
         color: rgba(180, 200, 230, 0.3);
@@ -151,7 +108,6 @@
         font-weight: 400;
       }
 
-      /* Required indicator - subtle asterisk on labels */
       .checkout-section label:has(+ input[required])::after,
       .checkout-section label:has(+ textarea[required])::after {
         content: " *";
@@ -160,7 +116,6 @@
         text-shadow: 0 0 8px rgba(255, 107, 74, 0.3);
       }
 
-      /* ---- Payment Method Options ---- */
       .payment-method {
         display: flex;
         flex-direction: column;
@@ -191,9 +146,6 @@
       .payment-option:has(input[type="radio"]:checked) {
         background: rgba(255, 107, 74, 0.08);
         border-color: #ff6b4a;
-        box-shadow:
-          0 0 0 1px rgba(255, 107, 74, 0.2),
-          0 4px 15px rgba(255, 107, 74, 0.08);
       }
 
       .payment-option input[type="radio"] {
@@ -237,19 +189,11 @@
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
       }
 
-      /* ---- Order Summary (Right Column) ---- */
       .order-summary-card {
-        background: linear-gradient(
-          145deg,
-          rgba(40, 50, 70, 0.6) 0%,
-          rgba(25, 35, 50, 0.5) 100%
-        );
         border: 1px solid rgba(100, 150, 255, 0.15);
         border-radius: 14px;
         padding: 24px 28px;
-        box-shadow:
-          0 8px 32px rgba(0, 0, 0, 0.3),
-          inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
         position: sticky;
         top: 100px;
       }
@@ -258,7 +202,6 @@
         border-color: rgba(255, 107, 74, 0.2);
       }
 
-      /* Cart items list inside order summary */
       .cart-items-review {
         margin: 12px 0 16px;
         border: none;
@@ -280,7 +223,7 @@
       .cart-item-review span:first-child {
         font-size: 1.4rem;
         color: #d0dcee;
-        flex: 1;
+
         padding-right: 12px;
       }
 
@@ -289,10 +232,8 @@
         font-weight: 700;
         color: #ffb347;
         text-shadow: 0 0 10px rgba(255, 179, 71, 0.15);
-        white-space: nowrap;
       }
 
-      /* Summary rows (Subtotal, Shipping, Total) */
       .order-summary {
         margin-top: 8px;
         padding-top: 12px;
@@ -323,13 +264,6 @@
         border-top: 1.5px solid rgba(255, 107, 74, 0.25);
       }
 
-      .summary-row.total span:first-child {
-        font-size: 1.7rem;
-        font-weight: 700;
-        color: #f0f6ff;
-        text-shadow: 0 0 10px rgba(255, 107, 74, 0.05);
-      }
-
       .summary-row.total span:last-child {
         font-size: 2rem;
         font-weight: 800;
@@ -358,24 +292,16 @@
       }
 
       .checkout-button::after {
-        content: "";
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 0.12) 0%,
-          transparent 50%
-        );
-        pointer-events: none;
       }
 
       .checkout-button:hover {
         transform: translateY(-3px);
         box-shadow: 0 10px 35px rgba(255, 107, 74, 0.4);
-        background: linear-gradient(135deg, #ff7a56 0%, #ff9870 100%);
       }
 
       .checkout-button:active {
@@ -383,12 +309,6 @@
         box-shadow: 0 6px 16px rgba(255, 107, 74, 0.25);
       }
 
-      .checkout-button:focus {
-        outline: 3px solid rgba(255, 107, 74, 0.3);
-        outline-offset: 2px;
-      }
-
-      /* ---- Empty cart state ---- */
       .empty-cart-message {
         text-align: center;
         padding: 80px 20px;
@@ -417,86 +337,6 @@
 
       .empty-cart-message a:hover {
         color: #a0d0ff;
-        text-decoration: underline;
-      }
-
-      /* ---- Page Load Animation ---- */
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .checkout-section {
-        animation: fadeInUp 0.5s ease forwards;
-      }
-
-      .checkout-section:nth-child(2) {
-        animation-delay: 0.1s;
-      }
-
-      .order-summary-card {
-        animation: fadeInUp 0.5s ease 0.15s forwards;
-        opacity: 0;
-      }
-
-      /* ---- Mobile Responsive for Checkout ---- */
-      @media (max-width: 768px) {
-        .checkout-main {
-          padding: 10px 0 40px;
-        }
-
-        .checkout-container {
-          gap: 20px;
-        }
-
-        .checkout-section {
-          padding: 20px;
-        }
-
-        .checkout-section h2 {
-          font-size: 1.7rem;
-        }
-
-        .order-summary-card {
-          padding: 18px 20px;
-        }
-
-        .checkout-button {
-          font-size: 1.5rem;
-          padding: 14px 20px;
-        }
-
-        .payment-option {
-          padding: 12px 14px;
-        }
-
-        .summary-row.total span:last-child {
-          font-size: 1.7rem;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .checkout-section {
-          padding: 16px;
-          border-radius: 10px;
-        }
-
-        .checkout-section input,
-        .checkout-section textarea {
-          padding: 10px 12px;
-          font-size: 1.4rem;
-        }
-
-        .back-link {
-          font-size: 1.3rem;
-          padding: 6px 10px;
-        }
       }
     </style>
   </head>
@@ -731,7 +571,7 @@
         }
 
         // Hiển thị danh sách sản phẩm trong đơn hàng
-        // Mỗi item sẽ hiển thị: Tên x Số lượng | Subtotal
+        // Mỗi item sẽ hiển thị subtotal: Tên x Số lượng
         const reviewHTML = cart
           .map((item) => {
             const subtotal = item.price * item.quantity; // Tiền = Giá x Số lượng
